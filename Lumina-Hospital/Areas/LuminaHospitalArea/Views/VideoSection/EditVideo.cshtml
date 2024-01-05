@@ -1,0 +1,42 @@
+﻿@model VideoSectionEditVM
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Edit Video</h4>
+
+                    <form class="forms-sample" method="post" enctype="multipart/form-data">
+                        <input type="hidden" asp-for="Id" />
+
+                        <div class="form-group">
+                            <label asp-for="VideoPath">Video</label>
+                            @if (!string.IsNullOrEmpty(Model.VideoPath))
+                            {
+                                <video width="200" autoplay="" loop="" muted="" poster="">
+                                    <source src="~/assets/images/video/@Model.VideoPath" type="video/mp4">
+                                </video>
+                            }
+                            <input asp-for="Video" type="file" class="form-control" />
+                            <span class="text-danger" asp-validation-for="Video"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary mr-2">Save</button>
+
+                        <a class="btn btn-light" asp-action="Index">Back to List</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationPartial"></partial>
+}
+

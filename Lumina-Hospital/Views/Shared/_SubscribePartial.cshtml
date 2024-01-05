@@ -1,0 +1,25 @@
+﻿@model SubscribeSection
+<!--Subscribe -->
+
+<section class="subscribe" style="background-image: url(./assets/images/subscribe/ezgif.com-webp-to-jpg.jpg);">
+    <div class="container">
+        <div class="subscribe-wrapper">
+            <h2>
+                @Model.Title
+            </h2>
+            <p>@Model.ShortDescription</p>
+            <form action="/Subiscriber/SubsicribeRequest" method="post" class="subscribe-form">
+                <div class="d-flex">
+                    <input type="email" name="email" autocomplete="off" id="email" placeholder="Your email address" required>
+                    <button class="btn-cross" type="submit">Submit</button>
+                </div>
+            </form>
+            @if (ViewBag.Thanks != null)
+            {
+                <p>@ViewBag.Thanks</p>
+            }
+        </div>
+    </div>
+</section>
+
+<!--End Subscribe -->

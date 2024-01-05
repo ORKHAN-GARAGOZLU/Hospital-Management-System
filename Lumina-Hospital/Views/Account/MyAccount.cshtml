@@ -1,0 +1,168 @@
+﻿@using Lumina_Hospital.ViewModel.Admin.User
+@model UserEditVM
+<!-- My accout start -->
+
+<section class="distance my-account">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-3">
+                <ul class="tabs clearfix" data-tabgroup="first-tab-group">
+                    <li><a href="#tab1" class="active">Account Details</a></li>
+                    <li><a href="#tab2">Adress</a></li>
+                    <li><a href="#tab3">Orders</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-9">
+                <div id="first-tab-group" class="tabgroup">
+                    <div id="tab1">
+                        <div class="account-content">
+                            <div class="myaccount-details">
+                                @if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+                                {
+                                    <div class="alert alert-success">
+                                        @ViewBag.SuccessMessage
+                                    </div>
+                                }
+                                <form asp-action="MyAccount" class="myaccount-form">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <div class="myaccount-form-inner">
+                                        <div class="single-input single-input-half">
+                                            <label>Fullname</label>
+                                            <input asp-for=FullName type="text" />
+                                            <span class="text-danger" asp-validation-for="FullName"></span>
+
+                                        </div>
+                                        <div class="single-input single-input-half">
+                                            <label>Username</label>
+                                            <input asp-for=UserName type="text" />
+                                            <span class="text-danger" asp-validation-for="UserName"></span>
+
+                                        </div>
+                                        <div class="single-input">
+                                            <label>Email*</label>
+                                            <input asp-for=Email type="email" />
+                                            <span class="text-danger" asp-validation-for="Email"></span>
+
+                                        </div>
+                                        <div class="single-input">
+                                            <label>Current Password(leave blank to leave unchanged)</label>
+                                            <input asp-for="OldPassword" type="password" />
+                                            <span class="text-danger" asp-validation-for="OldPassword"></span>
+
+                                        </div>
+                                        <div class="single-input">
+                                            <label>New Password (leave blank to leave unchanged)</label>
+                                            <input asp-for="NewPassword" type="password" />
+                                            <span class="text-danger" asp-validation-for="NewPassword"></span>
+
+                                        </div>
+                                        
+                                        <div class="single-input">
+                                            <button class="btn-cross" type="submit">
+                                                <span>SAVE CHANGES</span>
+
+                                            </button>
+
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab2">
+                        <div class="account-content">
+                            <div class="my-account-address">
+                                <p>
+                                    The following addresses will be used on the checkout
+                                    page by default.
+                                </p>
+                                <div class="row">
+                                    <div class="col">
+                                        <h4 class="small-title">BILLING ADDRESS</h4>
+                                        @if (Model.OrderInfo != null)
+                                        {
+                                            <address>
+                                                @Model.OrderInfo.Address
+                                            </address>
+                                        }
+                                        else
+                                        {
+                                            <p>No billing address available.</p>
+                                        }
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab3">
+                        <div class="account-content">
+                            <div class="my-account-orders">
+                                <h4 class="small-title">MY ORDERS</h4>
+                                @if (Model.OrderInfo != null)
+                                {
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        Name
+                                                    </th>
+                                                    <th>
+                                                        Price
+                                                    </th>
+
+                                                    <th>
+                                                        Count
+                                                    </th>
+                                                    <th>
+                                                        View product
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                @foreach (var item in Model.OrderInfo.OrderDetails)
+                                                {
+                                                    <tr class="mt-1">
+                                                        <td>
+                                                            @item.ProductName
+                                                        </td>
+                                                        <td>
+                                                            @item.ProductPrice
+                                                        </td>
+
+                                                        <td>
+                                                            @item.ProductCount
+                                                        </td>
+                                                        <td>
+                                                            <a class="btn btn-dark" asp-controller="product" asp-action="detail" asp-route-id="@item.Id">View</a>
+                                                        </td>
+                                                    </tr>
+                                                }
+
+                                            </tbody>
+                                            <div class="mt-1">
+                                                <h5 class="mt-2">Total: @Math.Round(Model.OrderInfo.TotalPrice) $</h5>
+                                            </div>
+                                        </table>
+
+                                    </div>
+                                }
+                                else
+                                {
+                                    <p>No order information available.</p>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- My accout end -->

@@ -1,0 +1,38 @@
+﻿@using Lumina_Hospital.Entities.Product
+@model List<Drug>
+
+@foreach (var item in Model)
+{
+    <div class="col-md-4 col-sm-6 col-xs-12" product-category="@item.Category.Name">
+        <div class="product-item">
+            <div class="product-img">
+                <a asp-controller="product" asp-action="detail" asp-route-id="@item.Id">
+                    <img class="primary-img" src="~/assets/images/products/@(item.DrugImages.FirstOrDefault(d => d.IsMain)!= null?item.DrugImages.FirstOrDefault(d =>d.IsMain).ImagePath: "")" alt="Product Images" />
+                    <img class="secondary-img" src="~/assets/images/products/@(item.DrugImages.FirstOrDefault(d => d.IsHover)!= null?item.DrugImages.FirstOrDefault(d =>d.IsHover).ImagePath: "")" alt="Product Images" />
+                </a>
+                <div class="product-add-action">
+                    <ul>
+                        <li><a href="#"><i class="pe-7s-like"></i></a></li>
+                        <li><a asp-controller="product" asp-action="detail" asp-route-id="@item.Id"><i class="pe-7s-look"></i></a></li>
+                        <li><a asp-controller="basket" asp-action="addbasket" asp-route-id="@item.Id"><i class="pe-7s-cart card-btn"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="product-content">
+                <a class="product-name" asp-controller="product" asp-action="detail" asp-route-id="@item.Id">@item.Name</a>
+                <div class="price-box pb-1">
+                    <span class="new-price">@item.Price $</span>
+                </div>
+                <div class="rating-box">
+                    <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+}

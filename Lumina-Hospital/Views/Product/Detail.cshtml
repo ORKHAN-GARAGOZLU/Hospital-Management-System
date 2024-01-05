@@ -1,0 +1,222 @@
+﻿@using Lumina_Hospital.Entities.Product
+@model ProductVM
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<!-- Start Single Product -->
+
+<div class="single-product-area mt-4 mb-5">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-6">
+
+                <div class="single-product-image">
+                    <div class="swiper-container gallery-top">
+                        <div class="swiper-wrapper">
+                            @foreach (var item in Model.CurrentProduct.DrugImages)
+                            {
+                                <div class="swiper-slide">
+                                    <div class="imgbox">
+                                        <img src="~/assets/images/products/@item.ImagePath" alt="lumina-product">
+                                    </div>
+                                </div>
+                            }
+
+
+                        </div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                    <div class="swiper-container gallery-thumbs">
+                        <div class="swiper-wrapper">
+                            @foreach (var item in Model.CurrentProduct.DrugImages)
+                            {
+                                <div class="swiper-slide">
+                                    <div class="imgbox">
+                                        <img src="~/assets/images/products/@item.ImagePath" alt="lumina-product">
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 pt-5 pt-lg-0">
+                <div class="single-product-content">
+                    <h2 class="title">@Model.CurrentProduct.Name</h2>
+                    <div class="price-box">
+                        <span class="new-price">@Model.CurrentProduct.Price $</span>
+                    </div>
+
+                    <p class="short-desc">
+                        @Model.CurrentProduct.ShortDescription
+                    </p>
+                    <ul class="quantity-with-btn">
+
+                        <li class="add-to-cart">
+                            <a class="btn-cross" asp-controller="basket" asp-action="addbasket" asp-route-id="@Model.CurrentProduct.Id">Add to cart</a>
+                        </li>
+
+                        <li class="wishlist-btn-wrap">
+                            <a class="custom-circle-btn" asp-controller="wishlist" asp-action="addwishlist" asp-route-id="@Model.CurrentProduct.Id">
+                                <i class="pe-7s-like"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="service-item-wrap">
+                        <li class="service-item">
+                            <div class="service-img">
+                                <i class="bi bi-truck"></i>
+                            </div>
+                            <div class="service-content">
+                                <span class="title">Free <br /> Shipping</span>
+                            </div>
+                        </li>
+                        <li class="service-item">
+                            <div class="service-img">
+                                <i class="bi bi-credit-card-2-back"></i>
+                            </div>
+                            <div class="service-content">
+                                <span class="title">Safe <br />Payment</span>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <div class="product-category">
+                        <span class="title">Category :</span>
+                        <ul>
+                            <li><a>@Model.CurrentProduct.Category.Name</a></li>
+                        </ul>
+
+                    </div>
+                    <div class="product-category d-flex social-link pb-0">
+                        <span class="title pe-3">Share:</span>
+                        <div class="sharethis-inline-share-buttons"></div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="single-product-information">
+
+                <div class="col-lg-12">
+                    <ul class="tabs clearfix single-product-info" data-tabgroup="first-tab-group">
+                        <li><a href="#tab1" class="active">Information</a></li>
+                        <li><a href="#tab2">Description</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-12">
+                    <div id="first-tab-group" class="tabgroup">
+
+                        <div id="tab1">
+
+                            @foreach (var item in Model.ShippingInformations)
+                            {
+                                <div>
+                                    <h4>@item.Title</h4>
+                                    <p>
+                                        @item.Description
+                                    </p>
+                                </div>
+                            }
+
+
+                        </div>
+
+                        <div id="tab2">
+
+                            <div class="description">
+                                <p>
+                                    @Model.CurrentProduct.LongDescription
+                                </p>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- End Single Product -->
+<!-- Begin Product Area -->
+<div class="distance">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-header">
+                    <h2>
+                        Related Drugs</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, quaerat.</p>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="swiper-container product-slider overflow-hidden">
+                    <div class="swiper-wrapper">
+
+                        @foreach (var item in Model.RelatedProducts)
+                        {
+                            <div class="swiper-slide product-item">
+                                <div class="product-img">
+                                    <a href="single-product-variable.html">
+                                        <img class="primary-img"
+                                             src="~/assets/images/products/@item.DrugImages.FirstOrDefault(d => d.IsMain).ImagePath"
+                                             alt="Product Images" />
+                                        <img class="secondary-img"
+                                             src="~/assets/images/products/@item.DrugImages.FirstOrDefault(d => d.IsHover).ImagePath"
+                                             alt="Product Images" />
+                                    </a>
+                                    <div class="product-add-action">
+                                        <ul>
+                                            <li><a href="#"><i class="pe-7s-like"></i></a></li>
+                                            <li><a href="#"><i class="pe-7s-look"></i></a></li>
+                                            <li><a href="#"><i class="pe-7s-cart"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <a class="product-name"
+                                       href="single-product-variable.html">@item.Name</a>
+                                    <div class="price-box pb-1">
+                                        <span class="new-price">@item.Price</span>
+                                    </div>
+                                    <div class="rating-box">
+                                        <ul>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Product Area End Here -->

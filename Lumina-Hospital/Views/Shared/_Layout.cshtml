@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="~/assets/images/logo/logo-icon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="~/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/assets/css/Pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="~/assets/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/assets/vendor/owlcarusel/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/assets/vendor/owlcarusel/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="~/assets/css/main.css">
+
+    <title>Lumina</title>
+    
+</head>
+<body>
+   
+
+
+
+    <!-- Header start -->
+
+    @await Component.InvokeAsync("Header")
+
+    <!-- End Header -->
+
+
+    <main>
+        @RenderBody()
+    </main>
+
+
+    <!-- Start Footer -->
+
+    @await Component.InvokeAsync("Footer")
+
+    <!-- End Footer -->
+
+    <!-- JS -->
+    <script src="~/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    
+    
+
+    <script src="~/assets/vendor/owlcarusel/owl.carousel.min.js"></script>
+    
+    @* <script src="~/assets/js/calendar.js"></script> *@
+    <script src="~/assets/js/sliders.js"></script>
+    @* <script src="~/assets/js/doctors.js"></script> *@
+    @* <script src="~/assets/js/products.js"></script> *@
+    <script src="~/assets/js/popup.js"></script>
+    <script src="~/assets/js/appointment.js"></script>
+    <script src="~/assets/js/filterDoctors.js"></script>
+    <script src="~/assets/js/filterProducts.js"></script>
+    <script src="~/assets/js/search.js"></script>
+    <script src="~/assets/js/main.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+
+    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=6594942d26098e0019f12a03&product=inline-share-buttons&source=platform" async="async"></script>
+
+
+</body>
+@RenderSection("Scripts", false)
+@RenderSection("CSS", false)
+
+</html>

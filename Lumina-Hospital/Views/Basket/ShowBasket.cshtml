@@ -1,0 +1,126 @@
+﻿@model List<BasketVM>
+@{
+    ViewData["Title"] = "ShowBasket";
+    double totalCount = Model.Sum(p => p.Price * p.BasketCount);
+}
+<!-- Basket banner start -->
+
+<section class="department-banner">
+    <div class="container">
+        <div class="department-banner-items">
+
+            <h1 class="department-name">Basket page</h1>
+
+            <button class="department-request custom-btn-bg-white">
+                <a asp-controller="contact" asp-action="contactrequest">Contact us <i class="bi bi-arrow-right"></i></a>
+            </button>
+
+            <div class="d-flex column-gap-2">
+                <button class="department-request custon-btn-bg-teal mt-2">
+                    <a asp-controller="donate" asp-action="donaterequest">Donate</a>
+                </button>
+                <button class="department-request custon-btn-bg-teal mt-2">
+                    <a asp-controller="volunteer" asp-action="index">Volunteer</a>
+                </button>
+            </div>
+
+            <div class="">
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- Basket banner end -->
+
+<section class="distance">
+    <div class="cart-area">
+        @if (Model.Count > 0)
+        {
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <form action="">
+                            <div class="table-content table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="product_remove">remove</th>
+                                            <th class="product-thumbnail">images</th>
+                                            <th class="cart-product-name">Product name</th>
+                                            <th class="product-quantity">Count</th>
+                                            <th class="product-subtotal">Price</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td class="product_remove">
+                                                    <a asp-controller="basket" asp-action="remove" asp-route-id="@item.Id"><i class="pe-7s-close"></i></a>
+                                                </td>
+                                                <td class="product-thumbnail">
+                                                    <a href="#"><img src="~/assets/images/products/@item.ImagePath" alt="Cart Thumbnail" /></a>
+                                                </td>
+                                                <td class="product-name">
+                                                    <a href="#">@item.Name</a>
+                                                </td>
+                                                <td class="quantity">
+                                                    <div class="cart-view-btn-list">
+                                                        <button><a asp-controller="basket" asp-action="decrease" asp-route-id="@item.Id">-</a></button>
+                                                        <span>@item.BasketCount</span>
+                                                        <button><a asp-controller="basket" asp-action="increase" asp-route-id="@item.Id">+</a></button>
+                                                    </div>
+                                                </td>
+                                                <td class="product-subtotal">
+                                                    <span class="amount">@Math.Round(item.BasketCount * item.Price, 2)</span>
+                                                </td>
+
+                                            </tr>
+                                        }
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="coupon-all">
+                                        <div class="coupon">
+                                            <input id="coupon_code" class="input-text" name="coupon_code" placeholder="Coupon code" type="text" />
+                                            <input class="button mt-xxs-30" name="apply_coupon" value="Apply coupon" type="submit" />
+                                        </div>
+                                        <div class="coupon2">
+                                            <input class="button" name="update_cart" value="Update cart" type="submit" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5 ml-auto">
+                                    <div class="cart-page-total">
+                                        <h2>Cart totals</h2>
+                                        <ul>
+                                            <li>Subtotal <span>0$</span></li>
+                                            <li>Total <span>@Math.Round(totalCount, 2) $</span></li>
+                                        </ul>
+                                        <a asp-controller="order" asp-action="order">Proceed to checkout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        }
+        else
+        {
+            <div class="container">
+                <h1>Basket is empty<h1/>
+                    <h1><a asp-controller="product" asp-action="index">Go to product page</a></h1>
+            </div>
+        }
+    </div>
+</section>

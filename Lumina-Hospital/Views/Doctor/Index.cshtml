@@ -1,0 +1,72 @@
+﻿@model DoctorVM
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Banner Section-->
+
+<section class="banner-area-wrapper">
+    <div class="banner-area" style="background-image: url(./assets/images/banner/find-doctor-banner.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="banner-content">
+                        <h1>Our Doctors</h1>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit, molestiae fugit? Quos minus natus consectetur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--End Banner Section-->
+
+<!-- Doctor Section -->
+
+<section class="doctor distance">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-3">
+                <div class="widgets-searchbox">
+                    <form id="widgets-searchbox">
+                        <input class="input-field"
+                               type="text"
+                               placeholder="Search" />
+                        <button class="widgets-searchbox-btn" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="choose-department">
+                    <label class="mb-3" for="department">Choose Department:</label>
+                    <select class="input-field" id="departmentSelect">
+                        <option value="All">All</option>
+                        @foreach (var item in Model.Departments)
+                        {
+                            <option value="@item.Name">@item.Name</option>
+                        }
+
+                    </select>
+                </div>
+
+            </div>
+            <div class="col-lg-9">
+                <div class="team-section section">
+                    <div class="container">
+                        <div class="row" id="doctors-container">
+                            @await Html.PartialAsync("_DoctorPartialView")
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- Doctor Section -->

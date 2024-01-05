@@ -1,0 +1,80 @@
+﻿@model List<Blog>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Banner Section-->
+
+<section class="banner-area-wrapper">
+    <div class="banner-area" style="background-image: url(../assets/images/banner/blog-banner.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="banner-content">
+                        <h1>Blogs</h1>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit beatae dolore accusantium, provident velit dolorum</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--End Banner Section-->
+
+
+<!-- Blog Section start -->
+
+<section id="blog" class="blog distance">
+    <div class="container">
+
+        <div class="row gy-4 posts-list">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-xl-4 col-md-6">
+                    <div class="post-item position-relative h-100">
+
+                        <div class="post-img position-relative overflow-hidden">
+                            <img src="../assets/images/blog/@item.ImagePath" class="img-fluid" alt="">
+                            <span class="post-date">@item.CreateAt?.ToString("MMMM dd")</span>
+                        </div>
+
+                        <div class="post-content d-flex flex-column">
+
+                            <h3 class="post-title">@item.Title</h3>
+
+                            <div class="meta d-flex align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-person"></i> <span class="ps-2">@item.Author</span>
+                                </div>
+                            </div>
+
+                            <p>
+                                @(item.Description.Length > 150 ? item.Description.Substring(0, 150) + "..." : item.Description)
+                            </p>
+
+                            <hr>
+
+                            <div class="d-flex justify-content-between">
+                                <a asp-controller="blog" asp-action="detail" asp-route-id="@item.Id" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- End post list item -->
+            }
+
+
+
+
+        </div><!-- End blog posts list -->
+    </div>
+</section>
+
+<!-- Blog Section end -->

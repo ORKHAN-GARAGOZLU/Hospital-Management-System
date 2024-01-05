@@ -1,0 +1,71 @@
+﻿@model ContactFormVM
+
+<!-- Contact Us -->
+
+<div class="login-bg" style="background-image: url(../assets/images/login/Untitled\ design.png);">
+	<div class="container">
+		<div class="col-md-12">
+			<form class="form-horizontal login-items" role="form" action="#" method="post">
+				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Contact Us</h1>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group mb-2">
+							<div class="col-md-12">
+								<label for="username" class="control-label">Full name</label>
+								<div class="input-items">
+									<i class="fa fa-user"></i>
+									<input asp-for=Name type="text" autocomplete="off" class="form-control" placeholder="">
+									<span asp-validation-for="Name" class="text-danger"></span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group mb-2">
+							<div class="col-md-12">
+								<label for="tel" class="control-label">Tel</label>
+								<div class="input-items">
+									<i class="fa fa-solid fa-phone"></i>
+									<input asp-for=Tel type="tel" autocomplete="off" class="form-control" id="tel" placeholder="">
+									<span asp-validation-for="Tel" class="text-danger"></span>
+
+								</div>
+							</div>
+						</div>
+						<div class="form-group mb-2">
+							<div class="col-md-12">
+								<label for="email" class="control-label">Email</label>
+								<div class="input-items">
+									<i class="fa fa-solid fa-envelope"></i>
+									<input asp-for=Email type="email" class="form-control" id="email" placeholder="">
+									<span asp-validation-for="Email" class="text-danger"></span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group mb-2">
+							<div class="col-md-12">
+								<label for="message" class="control-label">Message *</label>
+								<div class="input-items">
+									<i class="fa fa-solid fa-pen-nib"></i>
+									<textarea asp-for=Mesaage rows="8" cols="50" class="form-control" id="message" placeholder=""></textarea>
+									<span asp-validation-for="Mesaage" class="text-danger"></span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group mb-2">
+							<div class="col-md-12">
+								<button type="submit" class="btn-cross">Send</button>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- End Contact Us -->

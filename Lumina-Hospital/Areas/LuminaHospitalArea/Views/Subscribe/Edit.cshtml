@@ -1,0 +1,46 @@
+﻿@using Lumina_Hospital.ViewModel.Admin.Subsicribe
+@model SubscribeSectionEditVM
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Edit subscribe section</h4>
+
+                    <form class="forms-sample" method="post">
+                        <input type="hidden" asp-for="Id" />
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">Title</label>
+                            <input asp-for="Title" class="form-control" placeholder="FullName">
+                            <span class="text-danger" asp-validation-for="Title"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">Short Description</label>
+                            <textarea asp-for="ShortDescription" class="form-control" placeholder="ShortDescription"></textarea>
+                            <span class="text-danger" asp-validation-for="ShortDescription"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">Long Description</label>
+                            <textarea asp-for="LongDescription" class="form-control" placeholder="LongDescription"></textarea>
+                            <span class="text-danger" asp-validation-for="LongDescription"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary mr-2">Save</button>
+                        <a class="btn btn-light" asp-action="Index">Back to List</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationPartial"></partial>
+}
+

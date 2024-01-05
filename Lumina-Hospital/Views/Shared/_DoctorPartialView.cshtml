@@ -1,0 +1,19 @@
+﻿@model DoctorVM
+
+@foreach (var item in Model.Doctors)
+{
+    <div class="col-md-4 col-sm-6 col-xs-12 doc" data-department="@item.Department.Name">
+        <div class="team-member">
+            <img src="~/assets/images/doctor/@item.ImagePath" alt="doctor" class="img-responsive">
+            <div class="contents text-center">
+                <h4>@item.Name</h4>
+                <p>@item.Department.Name</p>
+
+                <div class="d-flex flex-column row-gap-1">
+                    <a asp-controller="doctor" asp-action="detail" asp-route-id="@item.Id" class="btn-main">read more</a>
+                    <a asp-controller="appointment" asp-action="assignment" class="btn-main">appointment</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

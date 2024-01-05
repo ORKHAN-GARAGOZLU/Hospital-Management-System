@@ -1,0 +1,431 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Lumina_Hospital
+build_property.RootNamespace = Lumina_Hospital
+build_property.ProjectDir = C:\Users\user\Desktop\Final-Project\Hospital_Management_System\Lumina-Hospital\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\user\Desktop\Final-Project\Hospital_Management_System\Lumina-Hospital
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/AboutPage/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXEFib3V0UGFnZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/AboutPage/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXEFib3V0UGFnZVxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/AboutPage/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXEFib3V0UGFnZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/AboutPage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXEFib3V0UGFnZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/AboutSection/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXEFib3V0U2VjdGlvblxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/AboutSection/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXEFib3V0U2VjdGlvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Blog/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXEJsb2dcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Blog/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXEJsb2dcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Blog/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXEJsb2dcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Blog/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXEJsb2dcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Category/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXENhdGVnb3J5XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Category/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXENhdGVnb3J5XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXENhdGVnb3J5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXERhc2hib2FyZFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Department/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXERlcGFydG1lbnRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Department/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXERlcGFydG1lbnRcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Department/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXERlcGFydG1lbnRcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Department/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXERlcGFydG1lbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Doctor/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXERvY3RvclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Doctor/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXERvY3RvclxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Doctor/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXERvY3RvclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Doctor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXERvY3RvclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/DonateSection/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXERvbmF0ZVNlY3Rpb25cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/DonateSection/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXERvbmF0ZVNlY3Rpb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Drug/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXERydWdcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Drug/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXERydWdcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Drug/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXERydWdcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Drug/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXERydWdcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Gallery/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXEdhbGxlcnlcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Gallery/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXEdhbGxlcnlcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Gallery/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXEdhbGxlcnlcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Gallery/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXEdhbGxlcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Orders/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXE9yZGVyc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/PatientTestimonial/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFBhdGllbnRUZXN0aW1vbmlhbFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/PatientTestimonial/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFBhdGllbnRUZXN0aW1vbmlhbFxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/PatientTestimonial/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFBhdGllbnRUZXN0aW1vbmlhbFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/PatientTestimonial/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFBhdGllbnRUZXN0aW1vbmlhbFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Request/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFJlcXVlc3RcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Role/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFJvbGVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Role/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFJvbGVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Role/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFJvbGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Setting/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFNldHRpbmdcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Setting/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFNldHRpbmdcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Setting/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFNldHRpbmdcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFNoYXJlZFxfQWRtaW5MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Shared/_ValidationPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFNoYXJlZFxfVmFsaWRhdGlvblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Subscribe/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFN1YnNjcmliZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Subscribe/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFN1YnNjcmliZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/User/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFVzZXJcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/User/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFVzZXJcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/User/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFVzZXJcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFVzZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/VideoSection/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFZpZGVvU2VjdGlvblxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/VideoSection/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFZpZGVvU2VjdGlvblxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/VideoSection/EditTitle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFZpZGVvU2VjdGlvblxFZGl0VGl0bGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/VideoSection/EditVideo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFZpZGVvU2VjdGlvblxFZGl0VmlkZW8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/VideoSection/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFZpZGVvU2VjdGlvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/VolunteerOnboarding/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFZvbHVudGVlck9uYm9hcmRpbmdcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/VolunteerOnboarding/createdetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFZvbHVudGVlck9uYm9hcmRpbmdcY3JlYXRlZGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/VolunteerOnboarding/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFZvbHVudGVlck9uYm9hcmRpbmdcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Volunteer/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFZvbHVudGVlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Volunteer/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFZvbHVudGVlclxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Volunteer/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFZvbHVudGVlclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/Volunteer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXFZvbHVudGVlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Areas/LuminaHospitalArea/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTHVtaW5hSG9zcGl0YWxBcmVhXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/About/Faq.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcRmFxLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/About/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Account/ForgetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3JnZXRQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Account/MyAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxNeUFjY291bnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Appointment/Assignment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRcQXNzaWdubWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Basket/ShowBasket.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFza2V0XFNob3dCYXNrZXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Blog/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Blog/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Contact/ContactRequest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxDb250YWN0UmVxdWVzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Department/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Department/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Doctor/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Doctor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Donate/DonateRequest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9uYXRlXERvbmF0ZVJlcXVlc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Gallery/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FsbGVyeVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Order/Order.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcT3JkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Product/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Product/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Shared/Components/Doctor/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRG9jdG9yXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Shared/Components/Footer/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRm9vdGVyXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Shared/Components/Header/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSGVhZGVyXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Shared/Components/Product/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUHJvZHVjdFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Shared/Components/Subscribe/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU3Vic2NyaWJlXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Shared/_DoctorPartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Eb2N0b3JQYXJ0aWFsVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Shared/_DonatePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Eb25hdGVQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Shared/_ProductPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Qcm9kdWN0UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Shared/_SearchPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TZWFyY2hQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Shared/_SubscribePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TdWJzY3JpYmVQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Volunteer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm9sdW50ZWVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Wishlist/ShowWishlist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2lzaGxpc3RcU2hvd1dpc2hsaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/Desktop/Final-Project/Hospital_Management_System/Lumina-Hospital/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-srwyuddboh

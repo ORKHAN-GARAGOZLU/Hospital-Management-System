@@ -1,0 +1,25 @@
+﻿@model HomeVM
+
+@foreach (var item in Model.Departments)
+{
+    <li><a asp-controller="department" asp-action="detail" asp-route-id="@item.Id">@item.Name</a></li>
+
+}
+
+@foreach (var item in Model.Doctors)
+{
+    <li><a asp-controller="doctor" asp-action="detail" asp-route-id="@item.Id">@item.Name</a></li>
+
+}
+
+@foreach (var item in Model.Blogs)
+{
+    <li><a asp-controller="blog" asp-action="detail" asp-route-id="@item.Id">@item.Title</a></li>
+
+}
+
+@foreach (var item in Model.Drugs)
+{
+    <li><a asp-controller="product" asp-action="detail" asp-route-id="@item.Id">@item.Name</a></li>
+
+}

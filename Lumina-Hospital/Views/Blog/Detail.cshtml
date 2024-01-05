@@ -1,0 +1,141 @@
+﻿@model BlogVM
+
+<!-- Blog Details Section -->
+
+<section id="blog" class="blog distance">
+    <div class="container">
+
+        <div class="row g-5">
+
+            <div class="col-lg-8">
+
+                <article class="blog-details">
+
+                    <div class="post-img">
+                        <img src="~/assets/images/blog/@Model.Blogs.ImagePath" alt="" class="img-fluid">
+                    </div>
+
+                    <h2 class="title">@Model.Blogs.Title</h2>
+
+                    <div class="meta-top">
+                        <ul>
+                            <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="">@Model.Blogs.Author</a></li>
+                            <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href=""><time datetime="2020-01-01">@Model.Blogs.CreateAt?.ToString("MM.dd.yyyy")</time></a></li>
+                            <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="">@Model.Blogs.Comments.Count() Comments</a></li>
+                        </ul>
+                    </div><!-- End meta top -->
+
+                    <div class="content">
+                        <p>@Model.Blogs.Description</p>
+
+                    </div><!-- End post content -->
+
+                    <div class="meta-bottom">
+                        <div class="sharethis-inline-share-buttons"></div>
+                        @* <ul class="share-links">
+                            <li><a href="#"><i class="fb fa fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="tw fa fa-brands fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="wp fa fa-brands fa-whatsapp"></i></a></li>
+                        </ul> *@
+
+                    </div><!-- End meta bottom -->
+
+                </article><!-- End blog post -->
+
+                
+
+
+
+                <div class="blog-comment">
+                    <h4 class="heading">Comments (@Model.Blogs.Comments.Count())</h4>
+                    @foreach (var item in Model.Blogs.Comments)
+                    {
+                        <div class="blog-comment-item">
+                            <div class="blog-comment-content">
+                                <div class="user-meta">
+                                    @if (item.User != null)
+                                    {
+                                        <h2 class="user-name">@item.User.FullName</h2>
+                                    }
+                                    <span class="date">@item.CreationTime</span>
+                                </div>
+                                <p class="user-comment">
+                                    @item.Message
+                                </p>
+                                @if (User.Identity.IsAuthenticated && item.User != null && User.Identity.Name == item.User.UserName)
+                                {
+                                    <a class="btn-cross" asp-controller="blog" asp-action="deletecomment" asp-route-id="@item.Id">Delete comment</a>
+                                }
+                            </div>
+                        </div>
+                    }
+
+                </div>
+
+                <div class="feedback-area">
+                    <h2 class="heading">Leave a comment</h2>
+
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <a asp-controller="account" asp-action="login">If you want to write comment please login</a>
+                    }
+                    else
+                    {
+                        <form class="feedback-form" asp-action="AddComment" method="post" asp-route-id="@Model.Blogs.Id">
+                            @* <div class="group-input">
+                                <div class="form-field me-md-30">
+                                    <input name="name" placeholder="Your Name*" class="input-field">
+                                </div>
+                                <div class="form-field">
+                                    <input type="text" name="email" placeholder="Your Email*" class="input-field">
+                                </div>
+                            </div> *@
+                            <div class="form-field mt-30">
+                                <textarea asp-for="@Model.Blogs.Comments.FirstOrDefault(cm => cm.Blog.Id == Model.Blogs.Id).Message" placeholder="Message" class="textarea-field"></textarea>
+                            </div>
+                            <div class="button-wrap pt-5">
+                                <button type="submit" value="submit" class="btn btn-custom-size xl-size btn-pronia-primary" name="submit">
+                                    Post Comment
+                                </button>
+                            </div>
+                        </form>
+                    }
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <div class="sidebar">
+
+                    <div class="sidebar-item recent-posts">
+                        <h3 class="sidebar-title">Recent Posts</h3>
+
+                        <div class="mt-3">
+
+                            @foreach (var item in Model.Blogss.TakeLast(5))
+                            {
+                                <div class="post-item">
+                                    <img src="~/assets/images/blog/@item.ImagePath" alt="">
+                                    <div>
+                                        <h4><a href="blog-details.html">@item.Title</a></h4>
+                                        <time datetime="2020-01-01">@item.CreateAt?.ToString("MM.dd.yyyy")</time>
+                                    </div>
+                                </div>
+                            }
+
+                            
+
+                        </div>
+
+                    </div><!-- End sidebar recent posts-->
+
+                </div><!-- End Blog Sidebar -->
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- End Blog Details Section -->

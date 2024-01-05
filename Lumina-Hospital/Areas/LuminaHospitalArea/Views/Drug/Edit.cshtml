@@ -1,0 +1,96 @@
+﻿@model DrugEditVM
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Edit drug</h4>
+
+                    <form class="forms-sample" method="post" enctype="multipart/form-data">
+                        <input type="hidden" asp-for="Id" />
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">Name</label>
+                            <input asp-for="Name" class="form-control" placeholder="Name">
+                            <span class="text-danger" asp-validation-for="Name"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">Price</label>
+                            <input asp-for="Price" class="form-control" placeholder="Price">
+                            <span class="text-danger" asp-validation-for="Price"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">ShortDescription</label>
+                            <textarea asp-for="ShortDescription" class="form-control" placeholder="ShortDescription"></textarea>
+                            <span class="text-danger" asp-validation-for="ShortDescription"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">LongDescription</label>
+                            <textarea asp-for="LongDescription" class="form-control" placeholder="LongDescription"></textarea>
+                            <span class="text-danger" asp-validation-for="LongDescription"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">InStock</label>
+                            <input asp-for="InStock" class="form-control" placeholder="InStock">
+                            <span class="text-danger" asp-validation-for="InStock"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ImagePathMain">MainPhoto</label>
+                            @if (!string.IsNullOrEmpty(Model.ImagePathMain))
+                            {
+                                <img src="~/assets/images/products/@Model.ImagePathMain" alt="Image" class="img-thumbnail" style="max-width: 150px;" />
+                            }
+                            <input asp-for="MainPhoto" type="file" class="form-control" />
+                            <span class="text-danger" asp-validation-for="MainPhoto"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="ImagePathHover">HoverPhoto</label>
+                            @if (!string.IsNullOrEmpty(Model.ImagePathHover))
+                            {
+                                <img src="~/assets/images/products/@Model.ImagePathHover" alt="Image" class="img-thumbnail" style="max-width: 150px;" />
+                            }
+                            <input asp-for="HoverPhoto" type="file" class="form-control" />
+                            <span class="text-danger" asp-validation-for="HoverPhoto"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Photos">Photos</label>
+                            @if (Model.Photos != null && Model.Photos.Count > 0)
+                            {
+                                foreach (var photo in Model.Photos)
+                                {
+                                    <div>
+                                        <img src="~/assets/images/products/@photo" alt="Additional Photo" class="img-thumbnail" style="max-width: 300px; max-height: 300px;" />
+                                    </div>
+                                }
+                            }
+                            <input asp-for="Photos" type="file" multiple class="form-control" />
+                            <span class="text-danger" asp-validation-for="Photos"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">Edit category</label>
+                            <select asp-for="CategoryId" class="form-control" asp-items="@ViewBag.Categories">
+                                <option selected>Category</option>
+                            </select>
+                            <span class="text-danger" asp-validation-for="CategoryId"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary mr-2">Save</button>
+                        <a class="btn btn-light" asp-action="Index">Back to List</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationPartial"></partial>
+}
+

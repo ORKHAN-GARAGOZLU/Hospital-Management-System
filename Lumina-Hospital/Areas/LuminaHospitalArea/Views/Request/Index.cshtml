@@ -1,0 +1,342 @@
+﻿@using Lumina_Hospital.ViewModel.Operator
+@model RequestFormsVM
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Delete Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this item?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                <a id="deleteLink" class="btn btn-danger" href="#">Yes</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Contact forms</h4>
+                    <div class="table-responsive pt-3">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Name
+                                    </th>
+                                    <th>
+                                        Email
+                                    </th>
+                                    <th>
+                                        Tel
+                                    </th>
+                                    <th>
+                                        Message
+                                    </th>
+                                    <th>
+                                        Settings
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @if (Model.ContactForms.Any())
+                                {
+                                    @foreach (var item in Model.ContactForms)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @item.Name
+                                            </td>
+                                            <td>
+                                                @item.Email
+                                            </td>
+                                            <td>
+                                                @item.Tel
+                                            </td>
+                                            <td>
+                                                <textarea style="width: 500px; height: 150px">@item.Message</textarea>
+                                            </td>
+                                            <td>
+                                                <a asp-controller="request" asp-action="delete" asp-route-id="@item.Id" data-type="contact" class="btn btn-outline-danger delete-button" data-id="@item.Id" data-toggle="modal" data-target="#deleteModal">
+                                                    Delete
+                                                </a>
+                                            </td>
+
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="5" style="text-align: center; color: red">
+                                            Contact form is empty
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row distance">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Volunteer forms</h4>
+                    <div class="table-responsive pt-3">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Name
+                                    </th>
+                                    <th>
+                                        Age
+                                    </th>
+                                    <th>
+                                        Email
+                                    </th>
+                                    <th>
+                                        Tel
+                                    </th>
+                                    <th>
+                                        Education
+                                    </th>
+                                    <th>
+                                        About
+                                    </th>
+
+                                    <th>
+                                        Settings
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @if (Model.VolunteerForms.Any())
+                                {
+                                    @foreach (var item in Model.VolunteerForms)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @item.Name
+                                            </td>
+                                            <td>
+                                                @item.Age
+                                            </td>
+                                            <td>
+                                                @item.Email
+                                            </td>
+                                            <td>
+                                                @item.PhoneNumber
+                                            </td>
+                                            <th>
+                                                @item.Education
+                                            </th>
+                                            <th>
+                                                <textarea style="width: 500px; height: 150px">@item.AboutYourself</textarea>
+                                            </th>
+
+                                            <td>
+                                                <a asp-controller="request" asp-action="delete" asp-route-id="@item.Id" data-type="volunteer" class="btn btn-outline-danger delete-button" data-id="@item.Id" data-toggle="modal" data-target="#deleteModal">
+                                                    Delete
+                                                </a>
+                                            </td>
+
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="7" style="text-align: center; color: red">
+                                            Volunteer form is empty
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Donate forms</h4>
+                    <div class="table-responsive pt-3">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Name
+                                    </th>
+                                    <th>
+                                        Age
+                                    </th>
+                                    <th>
+                                        Email
+                                    </th>
+                                    <th>
+                                        Tel
+                                    </th>
+                                    <th>
+                                        LastDonateDate
+                                    </th>
+                                    <th>
+                                        BloodGroup
+                                    </th>
+
+                                    <th>
+                                        Settings
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @if (Model.Donates.Any())
+                                {
+                                    @foreach (var item in Model.Donates)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @item.Name
+                                            </td>
+                                            <td>
+                                                @item.BirthDate.ToString("dd MMMM yyyy")
+                                            </td>
+                                            <td>
+                                                @item.Email
+                                            </td>
+                                            <td>
+                                                @item.Phone
+                                            </td>
+                                            <th>
+                                                @item.LastDonateDate.ToString("dd MMMM yyyy")
+                                            </th>
+                                            <th>
+                                                @item.BloodGroup
+                                            </th>
+
+                                            <td>
+                                                <a asp-controller="request" asp-action="delete" asp-route-id="@item.Id" data-type="donate" class="btn btn-outline-danger delete-button" data-id="@item.Id" data-toggle="modal" data-target="#deleteModal">
+                                                    Delete
+                                                </a>
+                                            </td>
+
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="7" style="text-align: center; color: red">
+                                            Donate form is empty
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row distance">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Subscribers</h4>
+                    <div class="table-responsive pt-3">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                   
+                                    <th>
+                                        Email
+                                    </th>
+
+                                    <th>
+                                        Settings
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @if (Model.Subscribers.Any())
+                                {
+                                    @foreach (var item in Model.Subscribers)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @item.Email
+                                            </td>
+                                            <td>
+                                                <a asp-controller="request" asp-action="delete" asp-route-id="@item.Id" data-type="subscriber" class="btn btn-outline-danger delete-button" data-id="@item.Id" data-toggle="modal" data-target="#deleteModal">
+                                                    Delete
+                                                </a>
+                                            </td>
+
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="2" style="text-align: center; color: red">
+                                            Subscribers is empty
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('.delete-button').click(function () {
+                var itemId = $(this).data('id');
+                var itemType = $(this).data('type');
+
+                var deleteUrl = '/LuminaHospitalArea/Request/Delete?type=' + itemType + '&id=' + itemId;
+
+                $('#deleteLink').attr('href', deleteUrl);
+
+                $('#deleteModal').modal('show');
+            });
+        });
+    </script>
+}

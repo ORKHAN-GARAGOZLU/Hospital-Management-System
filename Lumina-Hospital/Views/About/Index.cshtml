@@ -1,0 +1,166 @@
+﻿@model AboutVM
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Banner Section-->
+
+<section class="banner-area-wrapper">
+    <div class="banner-area" style="background-image: url(./assets/images/banner/about-us-banner.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="banner-content">
+                        <h1>A new kind of excellence in healthcare</h1>
+                        <p>Lumina is reimagining healthcare to empower all patients to thrive. Learn more about how we're changing lives.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--End Banner Section-->
+
+<!-- About Section -->
+
+@{
+    int index = 0;
+}
+
+<section class="about">
+    <div class="container">
+        @foreach (var item in Model.Abouts)
+        {
+            <div class="row @(index % 2 == 0 ? "even" : "odd") @(index % 2 == 1 ? "" : "distance")">
+
+                @if (index % 2 == 0)
+                {
+                    <div class="col-lg-6">
+                        <div class="about-content">
+                            <h1>@item.Title</h1>
+                            <p>@item.Description</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-flex align-items-center">
+                        <img src="./assets/images/about/@item.ImagePath" alt="about-picture">
+                    </div>
+                }
+                else
+                {
+                    <div class="col-lg-6 d-flex align-items-center">
+                        <img src="./assets/images/about/@item.ImagePath" alt="about-picture">
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-content">
+                            <h1>@item.Title</h1>
+                            <p>@item.Description</p>
+                        </div>
+                    </div>
+                }
+
+            </div>
+
+            index++;
+        }
+
+
+@*         <div class="row">
+
+            <div class="col-lg-6 d-flex align-items-center">
+                <img src="./assets/images/about/about-2.jpg" alt="">
+            </div>
+
+            <div class="col-lg-6">
+                <div class="about-content">
+                    <h1>A national leader in cutting-edge research</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus ad dolore voluptatum sunt est accusantium perspiciatis vitae maxime odit perferendis, voluptatem temporibus adipisci neque beatae molestiae aliquid a et itaque architecto! Magni voluptatem, repellat doloribus assumenda repudiandae fuga dolores necessitatibus molestias fugiat ex illo, nesciunt deleniti hic repellendus, soluta expedita aliquid et mollitia voluptates.
+                    </p> <br>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati corporis id dolorem assumenda vitae molestiae doloremque nobis in nostrum eveniet. Excepturi, ad iusto aperiam officia esse ullam repudiandae, ratione culpa expedita quidem sed laudantium, quis sunt corporis corrupti nemo. Reiciendis officiis quas cupiditate doloremque natus animi exercitationem amet praesentium magni.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row distance">
+
+            <div class="col-lg-6">
+                <div class="about-content">
+                    <h1>Transforming health care</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus ad dolore voluptatum sunt est accusantium perspiciatis vitae maxime odit perferendis, voluptatem temporibus adipisci neque beatae molestiae aliquid a et itaque architecto! Magni voluptatem, repellat doloribus assumenda repudiandae fuga dolores necessitatibus molestias fugiat ex illo, nesciunt deleniti hic repellendus, soluta expedita aliquid et mollitia voluptates.
+                    </p> <br>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati corporis id dolorem assumenda vitae molestiae doloremque nobis in nostrum eveniet. Excepturi, ad iusto aperiam officia esse ullam repudiandae, ratione culpa expedita quidem sed laudantium, quis sunt corporis corrupti nemo. Reiciendis officiis quas cupiditate doloremque natus animi exercitationem amet praesentium magni.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 d-flex align-items-center">
+                <img src="./assets/images/about/about-3.jpg" alt="">
+            </div>
+
+        </div> *@
+
+    </div>
+
+
+</section>
+
+<!-- End About Section -->
+
+
+<!--  Testimonials Section  -->
+
+<section id="testimonials" class="testimonials section-bg">
+    <div class="container">
+
+        <div class="section-header">
+            <h2>Our Patients</h2>
+        </div>
+
+        <div class="slides-2 swiper">
+            <div class="swiper-wrapper">
+                @foreach (var item in Model.PatientTestimonials)
+                {
+                    <div class="swiper-slide">
+                        <div class="testimonial-wrap">
+                            <div class="testimonial-item">
+                                <img src="~/assets/images/testimonials/@item.ImagePath" class="testimonial-img" alt="">
+                                <h3>@item.Name</h3>
+                                <h4>@item.Position</h4>
+                                <div class="stars">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                </div>
+                                <p>
+                                    <i class="bi bi-quote quote-icon-left"></i>
+                                    @item.Content
+                                    <i class="bi bi-quote quote-icon-right"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- End testimonial item -->
+                }
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+    </div>
+</section>
+
+<!-- End Testimonials Section -->
+
+
+<!--Subscribe Section -->
+
+@await Component.InvokeAsync("Subscribe")
+
+<!--End Subscribe Section -->

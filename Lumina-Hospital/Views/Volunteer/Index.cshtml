@@ -1,0 +1,227 @@
+﻿@model VolunterVM
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!--Start Volunter Banner -->
+
+<section class="department-banner">
+    <div class="container">
+        <div class="department-banner-items">
+
+            <h1 class="department-name">Volunteer Application Process</h1>
+            <button class="department-request custom-btn-bg-white">
+                <a href="">Request an appointment <i class="bi bi-arrow-right"></i></a>
+            </button>
+            <div class="d-flex column-gap-2">
+                <button class="department-request custon-btn-bg-teal mt-2">
+                    <a href="">Donate</a>
+                </button>
+                <button class="department-request custon-btn-bg-teal mt-2">
+                    <a href="">Contact Us</a>
+                </button>
+            </div>
+
+            <div class="">
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<!--End Volunter Banner -->
+
+
+<!--Start Volunter section -->
+
+<section class="distance depatment">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-3">
+                <ul class="tabs clearfix" data-tabgroup="first-tab-group">
+                    <li><a href="#tab1" class="active">Application Process</a></li>
+                    <li><a href="#tab2">Testimonials</a></li>
+                    <li><a href="#tab3">Volunteers of the Month</a></li>
+                    <li><a href="#tab4">Current Volunteers</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-9">
+                <div id="first-tab-group" class="tabgroup">
+
+                    <div id="tab1">
+                        <div class="application-process">
+
+                            @foreach (var item in Model.VolunteerOnboardings)
+                            {
+                                <div class="application-benefits">
+                                    <h4>@item.Title</h4>
+                                    <ol>
+                                        @foreach (var point in item.VolunteerOnboardingPoints)
+                                        {
+                                            <li>@point.Detail</li>
+                                        }
+                                    </ol>
+                                </div>
+                            }
+
+
+                            <div class="feedback-area">
+                                <h2 class="heading">Application blank</h2>
+                                <form class="feedback-form" action="#" role="form" method="post">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <div class="text-danger"></div>
+                                    <div class="group-input">
+                                        <div class="form-field me-md-30">
+                                            <input asp-for="@Model.Name" placeholder="Your Name*" autocomplete="off" class="input-field">
+                                            <span asp-validation-for="@Model.Name" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-field">
+                                            <input asp-for="@Model.Email" placeholder="Your Email*" autocomplete="off" class="input-field">
+                                            <span asp-validation-for="@Model.Email" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="group-input d-flex">
+                                        <div class="form-field me-md-30">
+                                            <input asp-for="@Model.Age" type="text" placeholder="Your age" autocomplete="off" class="input-field">
+                                            <span asp-validation-for="@Model.Age" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-field">
+                                            <select asp-for="@Model.Gender" class="input-field">
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+                                            <span asp-validation-for="@Model.Gender" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-field mt-30">
+                                        <input asp-for="@Model.Education"  placeholder="Your Education" class="input-field">
+                                        <span asp-validation-for="@Model.Education" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-field mt-30">
+                                        <input asp-for="@Model.PhoneNumber"  placeholder="Your phone number" class="input-field">
+                                        <span asp-validation-for="@Model.PhoneNumber" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-field mt-30">
+                                        <textarea asp-for="@Model.AboutYourself" placeholder="Write about yourself" class="textarea-field"></textarea>
+                                        <span asp-validation-for="@Model.AboutYourself" class="text-danger"></span>
+                                    </div>
+                                    <div class="button-wrap pt-5">
+                                        <button type="submit" class="btn btn-custom-size xl-size btn-pronia-primary">
+                                            Send Us
+                                        </button>
+                                    </div>
+                                </form>
+                                
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div id="tab2">
+
+                        <div class="testimonials">
+
+                            @foreach (var item in Model.Volunteers)
+                            {
+                                if (!string.IsNullOrEmpty(item.Testimonial))
+                                {
+                                    <div class="testimonial-wrap">
+                                        <div class="testimonial-item">
+                                            <img src="./assets/images/volunteers/@item.ImagePath" class="testimonial-img" alt="">
+                                            <h3>@item.Name</h3>
+                                            <h4>@item.Position</h4>
+                                            <p>
+                                                <i class="bi bi-quote quote-icon-left"></i>
+                                                @item.Testimonial
+                                                <i class="bi bi-quote quote-icon-right"></i>
+                                            </p>
+                                        </div>
+                                    </div>
+                                }
+                            }
+
+                        </div>
+
+
+                    </div>
+
+                    <div id="tab3">
+                        <div class="team-section">
+
+                            <div class="row">
+
+                                <div class="col-md-4 col-sm-6 col-xs-12 doc">
+                                    <div class="team-member">
+                                        <img src="./assets/images/volunteers/volunteer-1.jpg" alt="Volunteer" class="img-responsive">
+                                        <div class="contents text-center">
+                                            <h4>Jasmine Thompson</h4>
+                                            <p>Volunteer</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div id="tab4">
+                        <div class="team-section">
+                            <div class="row">
+
+                                @foreach (var item in Model.Volunteers)
+                                {
+                                    <div class="col-md-4 col-sm-6 col-xs-12 doc">
+                                        <div class="team-member">
+                                            <img src="./assets/images/volunteers/@item.ImagePath" alt="Volunteer" class="img-responsive">
+                                            <div class="contents text-center">
+                                                <h4>@item.Name</h4>
+                                                <p>@item.Position</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--End Volunter section -->
+
+
+<!--Start Donate -->
+
+<section class="donate">
+    <div class="container">
+        <div class="pt-5 pb-5 row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <h1>Your gift holds great power donate today!</h1>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="md d-flex justify-content-between">
+                    <p class="donate-desc">Make your tax-deductible gift and be a part of the cutting-edge research and care that's changing medicine.</p>
+                    <a class="btn-cross" href="">Donate</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!--End Donate -->

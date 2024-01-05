@@ -1,0 +1,136 @@
+﻿@model Video
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Delete Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this item?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                <a id="deleteLink" class="btn btn-danger" href="#">Yes</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Video table</h4>
+                    <div class="table-responsive pt-3">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Video
+                                    </th>
+                                    
+                                    <th>
+                                        Settings
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <video width="200" autoplay="" loop="" muted="" poster="">
+                                            <source src="~/assets/images/video/@Model.VideoPath" type="video/mp4">
+                                        </video>
+                                    </td>
+                                    <td>
+                                        <a asp-controller="videosection" asp-action="editvideo" asp-route-id="@Model.Id" class="btn btn-outline-danger">
+                                            Edit Video
+                                        </a>
+                                    </td>
+
+                                    
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Video titles</h4>
+                    <p class="card-description">
+                        <a class="btn btn-light" asp-controller="videosection" asp-action="create">Add title</a>
+                    </p>
+                    <div class="table-responsive pt-3">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Title
+                                    </th>
+
+                                    <th colspan="2">
+                                        Settings
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.VideoTitles.Where(v => !v.IsDelete))
+                                {
+                                    <tr>
+                                        <td>
+                                            @item.Title
+                                        </td>
+                                        <td>
+                                            <a asp-controller="videosection" asp-action="edittitle" asp-route-id="@item.Id" class="btn btn-outline-danger">
+                                                Edit title
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a asp-controller="videosection" asp-action="delete" asp-route-id="@item.Id" class="btn btn-outline-danger delete-button" data-id="@item.Id" data-toggle="modal" data-target="#deleteModal">
+                                                Delete
+                                            </a>
+                                        </td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('.delete-button').click(function () {
+                var itemId = $(this).data('id');
+                var deleteUrl = '/LuminaHospitalArea/VideoSection/Delete/' + itemId;
+
+                $('#deleteLink').attr('href', deleteUrl);
+
+                $('#deleteModal').modal('show');
+            });
+        });
+    </script>
+}
+

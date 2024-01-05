@@ -1,0 +1,118 @@
+﻿@model ProductVM
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Banner Section-->
+
+<section class="banner-area-wrapper">
+    <div class="banner-area" style="background-image: url(./assets/images/banner/our-product-banner.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="banner-content">
+                        <h1>Our Products</h1>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit, molestiae fugit? Quos minus natus consectetur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--End Banner Section-->
+
+
+<!-- Product Section -->
+
+<section class="our-product distance">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="sidebar-area">
+                    <div class="widgets-searchbox">
+                        <form id="widgets-searchbox">
+                            <input class="input-field"
+                                   type="text"
+                                   placeholder="Search" />
+                            <button class="widgets-searchbox-btn" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="widgets-area">
+                        <div class="widgets-item pt-0">
+                            <h2 class="widgets-title mb-4">Categories</h2>
+                            <ul class="widgets-category">
+                                <li>
+                                    <button product-category="all">
+                                        <i class="fa fa-chevron-right"></i>
+                                        All <span>(@Model.Drugs.Count())</span>
+                                    </button>
+                                </li>
+                                @foreach (var item in Model.Categories)
+                                {
+                                    <li>
+                                        <button product-category="@item.Name">
+                                            <i class="fa fa-chevron-right"></i>
+                                            @item.Name: <span>(@item.Drugs.Count())</span>
+                                        </button>
+                                    </li>
+                                }
+
+
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="bannera-item widgets-banner img-hover-effect">
+                        <div class="bannera-img">
+                            <img src="~/assets/images/products/product-for-add.png" alt="Banner Image" />
+                        </div>
+                        <div class="bannera-content text-position-center">
+                            <span class="collection">New Product</span>
+                            <h3 class="title">Lumina Drug</h3>
+                            <div><a class="btn custom-btn" href="#">Shop Now</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="product-section section">
+                    <div class="container">
+                        <div class="row row-gap-1" id="product-container">
+                            @await Html.PartialAsync("_ProductPartial")
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="pagination-area">
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next"
+                          >&raquo;</a
+                        >
+                      </li>
+                    </ul>
+                  </nav>
+                </div> -->
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<!--End Product Section -->

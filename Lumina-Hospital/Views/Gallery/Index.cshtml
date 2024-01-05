@@ -1,0 +1,69 @@
+﻿@model List<Gallery>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Banner Section-->
+
+<section class="banner-area-wrapper">
+    <div class="banner-area" style="background-image: url(./assets/images/banner/gallery-banner.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="banner-content">
+                        <h1>Our Gallery</h1>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit, molestiae fugit? Quos minus natus consectetur.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--End Banner Section-->
+
+<!-- Gallery Section -->
+
+<section id="gallery" class="gallery">
+    <div class="container distance">
+        <div class="row g-1">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-3 col-md-4">
+                    <div class="gallery-item">
+                        <a href="~/assets/images/gallery/@item.ImagePath" target="_blank">
+                            <img src="~/assets/images/gallery/@item.ImagePath" alt="">
+                        </a>
+                    </div>
+                </div> 
+            }
+
+        </div>
+
+    </div>
+</section>
+
+<!-- End Gallery Section -->
+
+<!--Start Donate -->
+
+<section class="donate">
+    <div class="container">
+        <div class="pt-5 pb-5 row">
+            <div class="col-lg-6 col-md-12">
+                <h1>Your gift holds great power donate today!</h1>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="md d-flex justify-content-between">
+                    <p class="donate-desc">Make your tax-deductible gift and be a part of the cutting-edge research and care that's changing medicine.</p>
+                    <a class="btn-cross" href="">Donate</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!--End Donate -->

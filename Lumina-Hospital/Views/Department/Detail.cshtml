@@ -1,0 +1,121 @@
+﻿@model Department
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<!--Start Department Banner -->
+
+<section class="department-banner">
+    <div class="container">
+        <div class="department-banner-items">
+
+            <h1 class="department-name">@Model.Name</h1>
+            <button class="department-request custom-btn-bg-white">
+                <a asp-controller="appointment" asp-action="assignment">Request an appointment <i class="bi bi-arrow-right"></i></a>
+            </button>
+            <div class="d-flex column-gap-2">
+                <button class="department-request custon-btn-bg-teal mt-2">
+                    <a asp-controller="donate" asp-action="donaterequest">Donate</a>
+                </button>
+                <button class="department-request custon-btn-bg-teal mt-2">
+                    <a asp-controller="volunteer" asp-action="index">Volunteer</a>
+                </button>
+            </div>
+
+            <div class="">
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<!--End Department Banner -->
+
+
+<!-- Department detail start -->
+
+<section class="distance depatment">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-3">
+                <ul class="tabs clearfix" data-tabgroup="first-tab-group">
+                    <li><a href="#tab1" class="active">About department</a></li>
+                    <li><a href="#tab2">Our Team</a></li>
+                    <li><a href="#tab3">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-9">
+                <div id="first-tab-group" class="tabgroup">
+
+                    <div id="tab1">
+                        <div class="account-content">
+                            <img class="department-image" src="~/assets/images/department-detail/@Model.ImagePath" alt="department-image">
+                            <span class="department-description">
+                                @Model.Description
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <div id="tab2">
+                        <div class="team-section">
+
+                            <div class="row">
+
+                                
+
+                                @foreach (var item in Model.Doctors)
+                                {
+                                    <div class="col-md-4 col-sm-6 col-xs-12 doc">
+                                        <div class="team-member">
+                                            <img src="~/assets/images/doctor/@item.ImagePath" alt="doctor" class="img-responsive">
+                                            <div class="contents text-center">
+                                                <h4>@item.Name</h4>
+                                                <p>@item.Position</p>
+                                                <a asp-controller="doctor" asp-action="detail" asp-route-id="@item.Id" class="btn btn-main">read more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div id="tab3">
+
+                        <h2 class="mb-4">Contact Us</h2>
+
+                        <div class="department-contact d-flex justify-content-between">
+
+                            <div class="col-lg-6">
+                                <div class="d-flex flex-column p-3">
+                                    <a class="depatment-contact-items" href=""><i class="pe-7s-map-marker"></i> <span>Nizami st. AFF Businnes House</span></a>
+                                    <a class="depatment-contact-items" href=""><i class="pe-7s-call"></i> <span>+994709070717</span></a>
+                                    <a class="depatment-contact-items" href=""><i class="pe-7s-clock"></i><span>Monday-Friday - 8:00 AM - 5:00 PM</span></a>
+                                </div>
+
+                            </div>
+
+                            <div class="col-lg-3">
+                                <img class="department-contact-image" src="~/assets/images/department-detail/department-detail-hospital-image.jpg" alt="">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Department detail end -->

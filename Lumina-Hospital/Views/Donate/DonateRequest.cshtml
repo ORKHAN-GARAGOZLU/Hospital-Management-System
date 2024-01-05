@@ -1,0 +1,118 @@
+﻿@model DonateVM
+
+<!-- Donate start -->
+
+<div class="login-bg" style="background-image: url(../assets/images/login/donate-bg.jpg);">
+    <div class="container">
+        <div class="col-md-12">
+            <form class="form-horizontal login-items" role="form" action="#" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Donate Blood</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="part col-md-6">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label for="username" class="control-label">Name</label>
+                                <div class="input-items">
+                                    <i class="fa fa-user"></i>
+                                    <input asp-for=FullName type="text" class="form-control" placeholder="">
+                                    <span asp-validation-for="FullName" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label for="password" class="control-label">Email</label>
+                                <div class="input-items">
+                                    <i class="fa fa-solid fa-envelope"></i>
+                                    <input asp-for=Email type="email" class="form-control" id="email" placeholder="">
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label for="phone" class="control-label">Phone</label>
+                                <div class="input-items">
+                                    <i class="fa fas fa-phone"></i>
+                                    <input asp-for=Phone type="text" class="form-control" id="number" placeholder="">
+                                    <span asp-validation-for="Phone" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="right-side col-md-6">
+
+                        <div class="donate-blood">
+
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label for="phone" class="control-label">Birth Date</label>
+                                    <div class="input-items">
+                                        <i class="fa far fa-calendar"></i>
+                                        <input asp-for=BirthDate type="date" class="form-control" id="number" placeholder="">
+                                        <span class="text-danger">
+                                            @Html.ValidationMessage("BirthDate")
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label for="phone" class="control-label">Last Donate Date</label>
+                                    <div class="input-items">
+                                        <i class="fa far fa-calendar"></i>
+                                        <input asp-for=LastDonateDate type="date" class="form-control" id="number" placeholder="">
+                                        <span class="text-danger">
+                                            @Html.ValidationMessage("LastDonateDate")
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label class="control-label">Select your blood group</label>
+                                    <div class="input-items">
+                                        <select asp-for="BloodGroup" class="form-control">
+                                            <option value="AB+">AB+</option>
+                                            <option value="AB-">AB-</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A-">A-</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B-">B-</option>
+                                            <option value="O+">O+</option>
+                                            <option value="O-">O-</option>
+                                        </select>
+                                        <span asp-validation-for="BloodGroup" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn-cross">Send us</button>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+<!-- Donate end -->

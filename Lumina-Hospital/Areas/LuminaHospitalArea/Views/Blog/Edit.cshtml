@@ -1,0 +1,55 @@
+﻿@model BlogEditVM
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Edit blog</h4>
+
+                    <form class="forms-sample" method="post" enctype="multipart/form-data">
+                        <input type="hidden" asp-for="Id" />
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">Author</label>
+                            <input asp-for="Author" class="form-control" placeholder="Author">
+                            <span class="text-danger" asp-validation-for="Author"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">Title</label>
+                            <input asp-for="Title" class="form-control" placeholder="Title">
+                            <span class="text-danger" asp-validation-for="Title"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">Description</label>
+                            <textarea asp-for="Description" class="form-control" placeholder="Description"></textarea>
+                            <span class="text-danger" asp-validation-for="Description"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="ImagePath">Photo</label>
+                            @if (!string.IsNullOrEmpty(Model.ImagePath))
+                            {
+                                <img src="~/assets/images/blog/@Model.ImagePath" alt="Image" class="img-thumbnail" style="max-width: 300px; max-height: 300px;" />
+                            }
+                            <input asp-for="Photo" type="file" class="form-control" />
+                            <span class="text-danger" asp-validation-for="Photo"></span>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary mr-2">Save</button>
+                        <a class="btn btn-light" asp-action="Index">Back to List</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationPartial"></partial>
+}
+

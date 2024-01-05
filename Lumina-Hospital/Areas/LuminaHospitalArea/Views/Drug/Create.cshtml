@@ -1,0 +1,83 @@
+﻿@model DrugCreateVM
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Create drug </h4>
+
+                    <form class="forms-sample" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">Name</label>
+                            <input asp-for="Name" class="form-control" placeholder="Name">
+                            <span class="text-danger" asp-validation-for="Name"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Price</label>
+                            <input asp-for="Price" class="form-control" placeholder="Price">
+                            <span class="text-danger" asp-validation-for="Price"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Short Description</label>
+                            <textarea asp-for="ShortDescription" class="form-control" placeholder="Short Description"></textarea>
+                            <span class="text-danger" asp-validation-for="ShortDescription"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Long Description</label>
+                            <textarea asp-for="LongDescription" class="form-control" placeholder="Long Description"></textarea>
+                            <span class="text-danger" asp-validation-for="LongDescription"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Stock count</label>
+                            <input asp-for="InStock" class="form-control" placeholder="Stock count">
+                            <span class="text-danger" asp-validation-for="InStock"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="MainPhoto"></label>
+                            <input asp-for="MainPhoto" multiple class="form-control" placeholder="MainPhoto">
+                            <span class="text-danger" asp-validation-for="MainPhoto"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="HoverPhoto"></label>
+                            <input asp-for="HoverPhoto" multiple class="form-control" placeholder="HoverPhoto">
+                            <span class="text-danger" asp-validation-for="HoverPhoto"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Photos"></label>
+                            <input asp-for="Photos" multiple class="form-control" placeholder="Photos">
+                            <span class="text-danger" asp-validation-for="Photos"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">Select category</label>
+                            <select asp-for="CategoryId" class="form-control" asp-items="@ViewBag.Categories">
+                                <option selected>Category</option>
+                            </select>
+                            <span class="text-danger" asp-validation-for="CategoryId"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                        <a class="btn btn-light" asp-action="Index">Back to List</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationPartial"></partial>
+}
+
+
