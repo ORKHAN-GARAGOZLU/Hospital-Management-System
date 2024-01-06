@@ -2,8 +2,8 @@
 using Lumina_Hospital.DAL;
 using Lumina_Hospital.Entities.AppUser;
 using Lumina_Hospital.Mapper;
-using Lumina_Hospital.Services.Helpers;
-using Lumina_Hospital.Services.Utilities;
+using Lumina_Hospital.Services.Abstract;
+using Lumina_Hospital.Services.Concrete;
 using Lumina_Hospital.ViewModel.Admin;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

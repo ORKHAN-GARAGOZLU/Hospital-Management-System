@@ -1,5 +1,6 @@
 ﻿using Lumina_Hospital.Entities.AboutPage;
 using Lumina_Hospital.Entities.AboutSection;
+using Lumina_Hospital.Entities.Appointments;
 using Lumina_Hospital.Entities.Blog;
 using Lumina_Hospital.Entities.Departments;
 using Lumina_Hospital.Entities.Doctors;
@@ -2049,6 +2050,46 @@ namespace Lumina_Hospital.Extension
                 });
 
             #endregion
+
+            modelBuilder.Entity<Availability>().HasData(
+            new Availability
+            {
+                Id = 1,
+                Time = "09:00 - 10:00",
+                DoctorId = 1,
+            },
+            new Availability
+            {
+                Id = 2,
+                Time = "10:00 - 11:00",
+                DoctorId = 1,
+            },
+            new Availability
+            {
+                Id = 3,
+                Time = "11:00 - 12:00",
+                DoctorId = 1,
+            },
+
+            new Availability
+            {
+                Id = 4,
+                Time = "09:00 - 10:00",
+                DoctorId = 2,
+            },
+            new Availability
+            {
+                Id = 5,
+                Time = "10:00 - 11:00",
+                DoctorId = 2,
+            },
+            new Availability
+            {
+                Id = 6,
+                Time = "11:00 - 12:00",
+                DoctorId = 2,
+            });
+
         }
     }
 }

@@ -73,3 +73,4 @@ C:\Users\user\Desktop\Final-Project\Hospital_Management_System\Lumina-Hospital\o
 C:\Users\user\Desktop\Final-Project\Hospital_Management_System\Lumina-Hospital\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\user\Desktop\Final-Project\Hospital_Management_System\Lumina-Hospital\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Facebook.dll
 C:\Users\user\Desktop\Final-Project\Hospital_Management_System\Lumina-Hospital\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Google.dll
+C:\Users\user\Desktop\Final-Project\Hospital_Management_System\Lumina-Hospital\obj\Debug\net6.0\Lumina-Hospital.sourcelink.json

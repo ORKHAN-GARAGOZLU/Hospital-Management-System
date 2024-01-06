@@ -1,5 +1,6 @@
 ﻿using Lumina_Hospital.Entities.AboutPage;
 using Lumina_Hospital.Entities.AboutSection;
+using Lumina_Hospital.Entities.Appointments;
 using Lumina_Hospital.Entities.AppUser;
 using Lumina_Hospital.Entities.Blog;
 using Lumina_Hospital.Entities.Contact;
@@ -54,6 +55,9 @@ namespace Lumina_Hospital.DAL
         public DbSet<Subsicriber> Subsicribers { get; set; }
         public DbSet<OrderInfo> OrderInfos { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<Appointment> Appointments { get; set; }
+        public DbSet<Availability> Availabilities { get; set; }
+
 
 
 

@@ -1,4 +1,5 @@
-﻿using Lumina_Hospital.Entities.Departments;
+﻿using Lumina_Hospital.Entities.Appointments;
+using Lumina_Hospital.Entities.Departments;
 
 namespace Lumina_Hospital.Entities.Doctors
 {
@@ -10,7 +11,9 @@ namespace Lumina_Hospital.Entities.Doctors
         public int DepartmentId { get; set; }
         public Department Department { get; set; }
         public DoctorBio DoctorBios { get; set; }
-       
+        public List<Appointment> Appointments { get; set; }
+        public  List<Availability> Availabilities { get; set; }
+
 
     }
 }

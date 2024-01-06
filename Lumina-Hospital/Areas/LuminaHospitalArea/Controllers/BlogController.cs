@@ -79,6 +79,8 @@ namespace Lumina_Hospital.Areas.LuminaHospitalArea.Controllers
 
         }
 
+
+
         public void SendEmail(string email, string subject, string blogUrl)
         {
 
