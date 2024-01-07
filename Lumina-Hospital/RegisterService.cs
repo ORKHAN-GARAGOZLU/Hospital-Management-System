@@ -55,30 +55,30 @@ namespace Lumina_Hospital
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<LuminaHospitalDbContex>();
 
 
-            services.AddAuthentication().AddFacebook(opt =>
-            {
-                opt.AppId = config["FacebookAppId"];
-                opt.AppSecret = config["FacebookAppSecret"];
-            });
-            //services.Configure<CookiePolicyOptions>(options =>
+            //services.AddAuthentication().AddFacebook(opt =>
             //{
-            //    options.Secure = CookieSecurePolicy.Always;
+            //    opt.AppId = config["FacebookAppId"];
+            //    opt.AppSecret = config["FacebookAppSecret"];
             //});
-            services.AddAuthentication(options =>
-            {
-                options.DefaultScheme = IdentityConstants.ApplicationScheme;
-                options.DefaultSignInScheme = IdentityConstants.ExternalScheme;
-            })
-            .AddCookie(options =>
-            {
-                options.ForwardAuthenticate = IdentityConstants.ExternalScheme;
-                options.Cookie.SameSite = SameSiteMode.None;
-            });
-            services.AddAuthentication().AddGoogle(opt =>
-            {
-                opt.ClientId = config["GoogleClientId"];
-                opt.ClientSecret = config["GoogleClientSecret"];
-            });
+            ////services.Configure<CookiePolicyOptions>(options =>
+            ////{
+            ////    options.Secure = CookieSecurePolicy.Always;
+            ////});
+            //services.AddAuthentication(options =>
+            //{
+            //    options.DefaultScheme = IdentityConstants.ApplicationScheme;
+            //    options.DefaultSignInScheme = IdentityConstants.ExternalScheme;
+            //})
+            //.AddCookie(options =>
+            //{
+            //    options.ForwardAuthenticate = IdentityConstants.ExternalScheme;
+            //    options.Cookie.SameSite = SameSiteMode.None;
+            //});
+            //services.AddAuthentication().AddGoogle(opt =>
+            //{
+            //    opt.ClientId = config["GoogleClientId"];
+            //    opt.ClientSecret = config["GoogleClientSecret"];
+            //});
 
             
 
