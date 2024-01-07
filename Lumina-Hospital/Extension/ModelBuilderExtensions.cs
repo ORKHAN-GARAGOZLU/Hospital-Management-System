@@ -937,6 +937,124 @@ namespace Lumina_Hospital.Extension
                 CreateAt = DateTime.Now
             });
 
+            #region Doctor available time
+
+            modelBuilder.Entity<Availability>().HasData(
+
+            new Availability { Id = 1, Time = "09:00 - 10:00", DoctorId = 1 },
+            new Availability { Id = 2, Time = "10:00 - 11:00", DoctorId = 1 },
+            new Availability { Id = 3, Time = "11:00 - 12:00", DoctorId = 1 },
+            new Availability { Id = 4, Time = "12:00 - 13:00", DoctorId = 1 },
+            new Availability { Id = 5, Time = "13:00 - 14:00", DoctorId = 1 },
+            new Availability { Id = 6, Time = "14:00 - 15:00", DoctorId = 1 },
+            new Availability { Id = 7, Time = "15:00 - 16:00", DoctorId = 1 },
+            new Availability { Id = 8, Time = "16:00 - 17:00", DoctorId = 1 },
+            new Availability { Id = 9, Time = "17:00 - 18:00", DoctorId = 1 },
+
+            new Availability { Id = 10, Time = "09:00 - 10:00", DoctorId = 2 },
+            new Availability { Id = 11, Time = "10:00 - 11:00", DoctorId = 2 },
+            new Availability { Id = 12, Time = "11:00 - 12:00", DoctorId = 2 },
+            new Availability { Id = 13, Time = "12:00 - 13:00", DoctorId = 2 },
+            new Availability { Id = 14, Time = "13:00 - 14:00", DoctorId = 2 },
+            new Availability { Id = 15, Time = "14:00 - 15:00", DoctorId = 2 },
+            new Availability { Id = 16, Time = "15:00 - 16:00", DoctorId = 2 },
+            new Availability { Id = 17, Time = "16:00 - 17:00", DoctorId = 2 },
+            new Availability { Id = 18, Time = "17:00 - 18:00", DoctorId = 2 },
+
+            new Availability { Id = 19, Time = "09:00 - 10:00", DoctorId = 3 },
+            new Availability { Id = 20, Time = "10:00 - 11:00", DoctorId = 3 },
+            new Availability { Id = 21, Time = "11:00 - 12:00", DoctorId = 3 },
+            new Availability { Id = 22, Time = "12:00 - 13:00", DoctorId = 3 },
+            new Availability { Id = 23, Time = "13:00 - 14:00", DoctorId = 3 },
+            new Availability { Id = 24, Time = "14:00 - 15:00", DoctorId = 3 },
+            new Availability { Id = 25, Time = "15:00 - 16:00", DoctorId = 3 },
+            new Availability { Id = 26, Time = "16:00 - 17:00", DoctorId = 3 },
+            new Availability { Id = 27, Time = "17:00 - 18:00", DoctorId = 3 },
+
+            new Availability { Id = 28, Time = "09:00 - 10:00", DoctorId = 4 },
+            new Availability { Id = 29, Time = "10:00 - 11:00", DoctorId = 4 },
+            new Availability { Id = 30, Time = "11:00 - 12:00", DoctorId = 4 },
+            new Availability { Id = 31, Time = "12:00 - 13:00", DoctorId = 4 },
+            new Availability { Id = 32, Time = "13:00 - 14:00", DoctorId = 4 },
+            new Availability { Id = 33, Time = "14:00 - 15:00", DoctorId = 4 },
+            new Availability { Id = 34, Time = "15:00 - 16:00", DoctorId = 4 },
+            new Availability { Id = 35, Time = "16:00 - 17:00", DoctorId = 4 },
+            new Availability { Id = 36, Time = "17:00 - 18:00", DoctorId = 4 },
+
+            new Availability { Id = 37, Time = "09:00 - 10:00", DoctorId = 5 },
+            new Availability { Id = 38, Time = "10:00 - 11:00", DoctorId = 5 },
+            new Availability { Id = 39, Time = "11:00 - 12:00", DoctorId = 5 },
+            new Availability { Id = 40, Time = "12:00 - 13:00", DoctorId = 5 },
+            new Availability { Id = 41, Time = "13:00 - 14:00", DoctorId = 5 },
+            new Availability { Id = 42, Time = "14:00 - 15:00", DoctorId = 5 },
+            new Availability { Id = 43, Time = "15:00 - 16:00", DoctorId = 5 },
+            new Availability { Id = 44, Time = "16:00 - 17:00", DoctorId = 5 },
+            new Availability { Id = 45, Time = "17:00 - 18:00", DoctorId = 5 },
+
+            new Availability { Id = 46, Time = "09:00 - 10:00", DoctorId = 6 },
+            new Availability { Id = 47, Time = "10:00 - 11:00", DoctorId = 6 },
+            new Availability { Id = 48, Time = "11:00 - 12:00", DoctorId = 6 },
+            new Availability { Id = 49, Time = "12:00 - 13:00", DoctorId = 6 },
+            new Availability { Id = 50, Time = "13:00 - 14:00", DoctorId = 6 },
+            new Availability { Id = 51, Time = "14:00 - 15:00", DoctorId = 6 },
+            new Availability { Id = 52, Time = "15:00 - 16:00", DoctorId = 6 },
+            new Availability { Id = 53, Time = "16:00 - 17:00", DoctorId = 6 },
+            new Availability { Id = 54, Time = "17:00 - 18:00", DoctorId = 6 },
+
+            new Availability { Id = 55, Time = "09:00 - 10:00", DoctorId = 7 },
+            new Availability { Id = 56, Time = "10:00 - 11:00", DoctorId = 7 },
+            new Availability { Id = 57, Time = "11:00 - 12:00", DoctorId = 7 },
+            new Availability { Id = 58, Time = "12:00 - 13:00", DoctorId = 7 },
+
+            new Availability { Id = 59, Time = "13:00 - 14:00", DoctorId = 8 },
+            new Availability { Id = 60, Time = "14:00 - 15:00", DoctorId = 8 },
+            new Availability { Id = 61, Time = "15:00 - 16:00", DoctorId = 8 },
+            new Availability { Id = 62, Time = "16:00 - 17:00", DoctorId = 8 },
+            new Availability { Id = 63, Time = "17:00 - 18:00", DoctorId = 8 },
+
+            new Availability { Id = 64, Time = "09:00 - 10:00", DoctorId = 9 },
+            new Availability { Id = 65, Time = "10:00 - 11:00", DoctorId = 9 },
+            new Availability { Id = 66, Time = "11:00 - 12:00", DoctorId = 9 },
+            new Availability { Id = 67, Time = "12:00 - 13:00", DoctorId = 9 },
+
+            new Availability { Id = 68, Time = "13:00 - 14:00", DoctorId = 10 },
+            new Availability { Id = 69, Time = "14:00 - 15:00", DoctorId = 10 },
+            new Availability { Id = 70, Time = "15:00 - 16:00", DoctorId = 10 },
+            new Availability { Id = 71, Time = "16:00 - 17:00", DoctorId = 10 },
+            new Availability { Id = 72, Time = "17:00 - 18:00", DoctorId = 10 },
+
+            new Availability { Id = 73, Time = "09:00 - 10:00", DoctorId = 11 },
+            new Availability { Id = 74, Time = "10:00 - 11:00", DoctorId = 11 },
+            new Availability { Id = 75, Time = "11:00 - 12:00", DoctorId = 11 },
+            new Availability { Id = 76, Time = "12:00 - 13:00", DoctorId = 11 },
+
+            new Availability { Id = 77, Time = "13:00 - 14:00", DoctorId = 12 },
+            new Availability { Id = 78, Time = "14:00 - 15:00", DoctorId = 12 },
+            new Availability { Id = 79, Time = "15:00 - 16:00", DoctorId = 12 },
+
+            new Availability { Id = 80, Time = "16:00 - 17:00", DoctorId = 13 },
+            new Availability { Id = 81, Time = "17:00 - 18:00", DoctorId = 13 },
+
+            new Availability { Id = 82, Time = "09:00 - 10:00", DoctorId = 14 },
+            new Availability { Id = 83, Time = "10:00 - 11:00", DoctorId = 14 },
+
+            new Availability { Id = 84, Time = "11:00 - 12:00", DoctorId = 15 },
+            new Availability { Id = 85, Time = "12:00 - 13:00", DoctorId = 15 },
+            new Availability { Id = 86, Time = "13:00 - 14:00", DoctorId = 15 },
+
+            new Availability { Id = 87, Time = "14:00 - 15:00", DoctorId = 16 },
+            new Availability { Id = 88, Time = "15:00 - 16:00", DoctorId = 16 },
+
+            new Availability { Id = 89, Time = "10:00 - 11:00", DoctorId = 17 },
+            new Availability { Id = 90, Time = "11:00 - 12:00", DoctorId = 17 },
+
+            new Availability { Id = 91, Time = "09:00 - 10:00", DoctorId = 18 },
+            new Availability { Id = 92, Time = "10:00 - 11:00", DoctorId = 18 },
+            new Availability { Id = 93, Time = "11:00 - 12:00", DoctorId = 18 },
+            new Availability { Id = 94, Time = "12:00 - 13:00", DoctorId = 18 });
+
+            #endregion
+
 
             #endregion
 
@@ -2051,119 +2169,6 @@ namespace Lumina_Hospital.Extension
 
             #endregion
 
-            modelBuilder.Entity<Availability>().HasData(
-
-            new Availability { Id = 1, Time = "09:00 - 10:00", DoctorId = 1},
-            new Availability { Id = 2, Time = "10:00 - 11:00", DoctorId = 1},
-            new Availability { Id = 3, Time = "11:00 - 12:00", DoctorId = 1},
-            new Availability { Id = 4, Time = "12:00 - 13:00", DoctorId = 1},
-            new Availability { Id = 5, Time = "13:00 - 14:00", DoctorId = 1},
-            new Availability { Id = 6, Time = "14:00 - 15:00", DoctorId = 1},
-            new Availability { Id = 7, Time = "15:00 - 16:00", DoctorId = 1},
-            new Availability { Id = 8, Time = "16:00 - 17:00", DoctorId = 1},
-            new Availability { Id = 9, Time = "17:00 - 18:00", DoctorId = 1},
-
-            new Availability { Id = 10, Time = "09:00 - 10:00", DoctorId = 2},
-            new Availability { Id = 11, Time = "10:00 - 11:00", DoctorId = 2},
-            new Availability { Id = 12, Time = "11:00 - 12:00", DoctorId = 2},
-            new Availability { Id = 13, Time = "12:00 - 13:00", DoctorId = 2},
-            new Availability { Id = 14, Time = "13:00 - 14:00", DoctorId = 2},
-            new Availability { Id = 15, Time = "14:00 - 15:00", DoctorId = 2},
-            new Availability { Id = 16, Time = "15:00 - 16:00", DoctorId = 2},
-            new Availability { Id = 17, Time = "16:00 - 17:00", DoctorId = 2},
-            new Availability { Id = 18, Time = "17:00 - 18:00", DoctorId = 2},
-
-            new Availability { Id = 19, Time = "09:00 - 10:00", DoctorId = 3},
-            new Availability { Id = 20, Time = "10:00 - 11:00", DoctorId = 3},
-            new Availability { Id = 21, Time = "11:00 - 12:00", DoctorId = 3},
-            new Availability { Id = 22, Time = "12:00 - 13:00", DoctorId = 3},
-            new Availability { Id = 23, Time = "13:00 - 14:00", DoctorId = 3},
-            new Availability { Id = 24, Time = "14:00 - 15:00", DoctorId = 3},
-            new Availability { Id = 25, Time = "15:00 - 16:00", DoctorId = 3},
-            new Availability { Id = 26, Time = "16:00 - 17:00", DoctorId = 3},
-            new Availability { Id = 27, Time = "17:00 - 18:00", DoctorId = 3},
-
-            new Availability { Id = 28, Time = "09:00 - 10:00", DoctorId = 4},
-            new Availability { Id = 29, Time = "10:00 - 11:00", DoctorId = 4},
-            new Availability { Id = 30, Time = "11:00 - 12:00", DoctorId = 4},
-            new Availability { Id = 31, Time = "12:00 - 13:00", DoctorId = 4},
-            new Availability { Id = 32, Time = "13:00 - 14:00", DoctorId = 4},
-            new Availability { Id = 33, Time = "14:00 - 15:00", DoctorId = 4},
-            new Availability { Id = 34, Time = "15:00 - 16:00", DoctorId = 4},
-            new Availability { Id = 35, Time = "16:00 - 17:00", DoctorId = 4},
-            new Availability { Id = 36, Time = "17:00 - 18:00", DoctorId = 4},
-
-            new Availability { Id = 37, Time = "09:00 - 10:00", DoctorId = 5},
-            new Availability { Id = 38, Time = "10:00 - 11:00", DoctorId = 5},
-            new Availability { Id = 39, Time = "11:00 - 12:00", DoctorId = 5},
-            new Availability { Id = 40, Time = "12:00 - 13:00", DoctorId = 5},
-            new Availability { Id = 41, Time = "13:00 - 14:00", DoctorId = 5},
-            new Availability { Id = 42, Time = "14:00 - 15:00", DoctorId = 5},
-            new Availability { Id = 43, Time = "15:00 - 16:00", DoctorId = 5},
-            new Availability { Id = 44, Time = "16:00 - 17:00", DoctorId = 5},
-            new Availability { Id = 45, Time = "17:00 - 18:00", DoctorId = 5},
-
-            new Availability { Id = 46, Time = "09:00 - 10:00", DoctorId = 6},
-            new Availability { Id = 47, Time = "10:00 - 11:00", DoctorId = 6},
-            new Availability { Id = 48, Time = "11:00 - 12:00", DoctorId = 6},
-            new Availability { Id = 49, Time = "12:00 - 13:00", DoctorId = 6},
-            new Availability { Id = 50, Time = "13:00 - 14:00", DoctorId = 6},
-            new Availability { Id = 51, Time = "14:00 - 15:00", DoctorId = 6},
-            new Availability { Id = 52, Time = "15:00 - 16:00", DoctorId = 6},
-            new Availability { Id = 53, Time = "16:00 - 17:00", DoctorId = 6},
-            new Availability { Id = 54, Time = "17:00 - 18:00", DoctorId = 6},
-
-            new Availability { Id = 55, Time = "09:00 - 10:00", DoctorId = 7},
-            new Availability { Id = 56, Time = "10:00 - 11:00", DoctorId = 7},
-            new Availability { Id = 57, Time = "11:00 - 12:00", DoctorId = 7},
-            new Availability { Id = 58, Time = "12:00 - 13:00", DoctorId = 7},
-
-            new Availability { Id = 59, Time = "13:00 - 14:00", DoctorId = 8},
-            new Availability { Id = 60, Time = "14:00 - 15:00", DoctorId = 8},
-            new Availability { Id = 61, Time = "15:00 - 16:00", DoctorId = 8},
-            new Availability { Id = 62, Time = "16:00 - 17:00", DoctorId = 8},
-            new Availability { Id = 63, Time = "17:00 - 18:00", DoctorId = 8},
-
-            new Availability { Id = 64, Time = "09:00 - 10:00", DoctorId = 9},
-            new Availability { Id = 65, Time = "10:00 - 11:00", DoctorId = 9},
-            new Availability { Id = 66, Time = "11:00 - 12:00", DoctorId = 9},
-            new Availability { Id = 67, Time = "12:00 - 13:00", DoctorId = 9},
-
-            new Availability { Id = 68, Time = "13:00 - 14:00", DoctorId = 10},
-            new Availability { Id = 69, Time = "14:00 - 15:00", DoctorId = 10},
-            new Availability { Id = 70, Time = "15:00 - 16:00", DoctorId = 10},
-            new Availability { Id = 71, Time = "16:00 - 17:00", DoctorId = 10},
-            new Availability { Id = 72, Time = "17:00 - 18:00", DoctorId = 10},
-
-            new Availability { Id = 73, Time = "09:00 - 10:00", DoctorId = 11},
-            new Availability { Id = 74, Time = "10:00 - 11:00", DoctorId = 11},
-            new Availability { Id = 75, Time = "11:00 - 12:00", DoctorId = 11},
-            new Availability { Id = 76, Time = "12:00 - 13:00", DoctorId = 11},
-
-            new Availability { Id = 77, Time = "13:00 - 14:00", DoctorId = 12},
-            new Availability { Id = 78, Time = "14:00 - 15:00", DoctorId = 12},
-            new Availability { Id = 79, Time = "15:00 - 16:00", DoctorId = 12},
-
-            new Availability { Id = 80, Time = "16:00 - 17:00", DoctorId = 13},
-            new Availability { Id = 81, Time = "17:00 - 18:00", DoctorId = 13},
-
-            new Availability { Id = 82, Time = "09:00 - 10:00", DoctorId = 14},
-            new Availability { Id = 83, Time = "10:00 - 11:00", DoctorId = 14},
-
-            new Availability { Id = 84, Time = "11:00 - 12:00", DoctorId = 15},
-            new Availability { Id = 85, Time = "12:00 - 13:00", DoctorId = 15},
-            new Availability { Id = 86, Time = "13:00 - 14:00", DoctorId = 15},
-
-            new Availability { Id = 87, Time = "14:00 - 15:00", DoctorId = 16},
-            new Availability { Id = 88, Time = "15:00 - 16:00", DoctorId = 16},
-
-            new Availability { Id = 89, Time = "10:00 - 11:00", DoctorId = 17},
-            new Availability { Id = 90, Time = "11:00 - 12:00", DoctorId = 17},
-
-            new Availability { Id = 91, Time = "09:00 - 10:00", DoctorId = 18},
-            new Availability { Id = 92, Time = "10:00 - 11:00", DoctorId = 18},
-            new Availability { Id = 93, Time = "11:00 - 12:00", DoctorId = 18},
-            new Availability { Id = 94, Time = "12:00 - 13:00", DoctorId = 18});
 
         }
     }
