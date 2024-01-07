@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Lumina_Hospital.Areas.LuminaHospitalArea.Controllers
 {
     [Area("LuminaHospitalArea")]
+    [Authorize(Roles = "Admin")]
     public class RequestController : Controller
     {
         private readonly LuminaHospitalDbContex _context;

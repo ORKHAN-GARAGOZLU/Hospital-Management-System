@@ -62,7 +62,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 1,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5234),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4849),
                             Description = "Welcome to Lumina Hospital, where expert care is always here for you. Our dedicated team provides personalized, compassionate care in a state-of-the-art facility. From routine check-ups to advanced procedures, we prioritize your well-being. With cutting-edge technology and a focus on innovation, we ensure accurate diagnoses and effective treatments. Compassion is at our core. Our skilled professionals build meaningful connections, fostering trust throughout your healthcare journey. We embrace innovation, staying ahead with the latest medical advancements. Specialized services across various disciplines cater to your unique health needs. At Lumina Hospital, your health is our mission. Experience the difference of expert care.",
                             ImagePath = "about-1.jpg",
                             IsDelete = false,
@@ -71,7 +71,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 2,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5235),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4850),
                             Description = "A beacon of excellence as a national leader in cutting-edge research. Our commitment to advancing medical knowledge sets us apart, driving innovation and improving patient outcomes. Our dedicated team of researchers, clinicians, and healthcare professionals collaborates on groundbreaking studies, pushing the boundaries of medical science. At the forefront of discovery, Lumina Hospital is proud to contribute to the latest advancements in healthcare. Our state-of-the-art research facilities, empower our experts to explore new frontiers in medicine. We actively engage in clinical trials, pioneering treatments that shape the future of healthcare. In addition to providing top-notch patient care. our institution is a hub for intellectual curiosity and scientific exploration.",
                             ImagePath = "about-2.jpg",
                             IsDelete = false,
@@ -80,7 +80,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 3,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5236),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4851),
                             Description = "At Lumina Hospital, we are dedicated to transforming health care through innovation and a commitment to excellence. As a leading institution, we embrace a dynamic approach to healthcare that goes beyond traditional boundaries. Our multidisciplinary team of healthcare professionals is united in the pursuit of transforming the patient experience, focusing on personalized care and positive outcomes. Innovative technologies are at the core of our transformative journey. Lumina Hospital invests in state-of-the-art medical equipment and cutting-edge solutions to enhance diagnostic accuracy and treatment efficacy. From artificial intelligence applications to telemedicine advancements, we leverage the latest tools to provide accessible, efficient, and high-quality care.",
                             ImagePath = "about-3.jpg",
                             IsDelete = false,
@@ -128,7 +128,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 1,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5102),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4778),
                             Description = "We are dedicated to delivering innovative care that bridges our expertise and your individual needs, so you can be your healthiest self.",
                             IsDelete = false,
                             TitleFirst = "We are rewriting healthcare, together",
@@ -160,19 +160,27 @@ namespace Lumina_Hospital.Migrations
                     b.Property<int>("DoctorId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsConfirm")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("DoctorId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Appointments");
                 });
@@ -235,23 +243,639 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 4,
+                            DoctorId = 1,
+                            IsDelete = false,
+                            Time = "12:00 - 13:00"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            DoctorId = 1,
+                            IsDelete = false,
+                            Time = "13:00 - 14:00"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            DoctorId = 1,
+                            IsDelete = false,
+                            Time = "14:00 - 15:00"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            DoctorId = 1,
+                            IsDelete = false,
+                            Time = "15:00 - 16:00"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            DoctorId = 1,
+                            IsDelete = false,
+                            Time = "16:00 - 17:00"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            DoctorId = 1,
+                            IsDelete = false,
+                            Time = "17:00 - 18:00"
+                        },
+                        new
+                        {
+                            Id = 10,
                             DoctorId = 2,
                             IsDelete = false,
                             Time = "09:00 - 10:00"
                         },
                         new
                         {
-                            Id = 5,
+                            Id = 11,
                             DoctorId = 2,
                             IsDelete = false,
                             Time = "10:00 - 11:00"
                         },
                         new
                         {
-                            Id = 6,
+                            Id = 12,
                             DoctorId = 2,
                             IsDelete = false,
                             Time = "11:00 - 12:00"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            DoctorId = 2,
+                            IsDelete = false,
+                            Time = "12:00 - 13:00"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            DoctorId = 2,
+                            IsDelete = false,
+                            Time = "13:00 - 14:00"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            DoctorId = 2,
+                            IsDelete = false,
+                            Time = "14:00 - 15:00"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            DoctorId = 2,
+                            IsDelete = false,
+                            Time = "15:00 - 16:00"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            DoctorId = 2,
+                            IsDelete = false,
+                            Time = "16:00 - 17:00"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            DoctorId = 2,
+                            IsDelete = false,
+                            Time = "17:00 - 18:00"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            DoctorId = 3,
+                            IsDelete = false,
+                            Time = "09:00 - 10:00"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            DoctorId = 3,
+                            IsDelete = false,
+                            Time = "10:00 - 11:00"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            DoctorId = 3,
+                            IsDelete = false,
+                            Time = "11:00 - 12:00"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            DoctorId = 3,
+                            IsDelete = false,
+                            Time = "12:00 - 13:00"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            DoctorId = 3,
+                            IsDelete = false,
+                            Time = "13:00 - 14:00"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            DoctorId = 3,
+                            IsDelete = false,
+                            Time = "14:00 - 15:00"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            DoctorId = 3,
+                            IsDelete = false,
+                            Time = "15:00 - 16:00"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            DoctorId = 3,
+                            IsDelete = false,
+                            Time = "16:00 - 17:00"
+                        },
+                        new
+                        {
+                            Id = 27,
+                            DoctorId = 3,
+                            IsDelete = false,
+                            Time = "17:00 - 18:00"
+                        },
+                        new
+                        {
+                            Id = 28,
+                            DoctorId = 4,
+                            IsDelete = false,
+                            Time = "09:00 - 10:00"
+                        },
+                        new
+                        {
+                            Id = 29,
+                            DoctorId = 4,
+                            IsDelete = false,
+                            Time = "10:00 - 11:00"
+                        },
+                        new
+                        {
+                            Id = 30,
+                            DoctorId = 4,
+                            IsDelete = false,
+                            Time = "11:00 - 12:00"
+                        },
+                        new
+                        {
+                            Id = 31,
+                            DoctorId = 4,
+                            IsDelete = false,
+                            Time = "12:00 - 13:00"
+                        },
+                        new
+                        {
+                            Id = 32,
+                            DoctorId = 4,
+                            IsDelete = false,
+                            Time = "13:00 - 14:00"
+                        },
+                        new
+                        {
+                            Id = 33,
+                            DoctorId = 4,
+                            IsDelete = false,
+                            Time = "14:00 - 15:00"
+                        },
+                        new
+                        {
+                            Id = 34,
+                            DoctorId = 4,
+                            IsDelete = false,
+                            Time = "15:00 - 16:00"
+                        },
+                        new
+                        {
+                            Id = 35,
+                            DoctorId = 4,
+                            IsDelete = false,
+                            Time = "16:00 - 17:00"
+                        },
+                        new
+                        {
+                            Id = 36,
+                            DoctorId = 4,
+                            IsDelete = false,
+                            Time = "17:00 - 18:00"
+                        },
+                        new
+                        {
+                            Id = 37,
+                            DoctorId = 5,
+                            IsDelete = false,
+                            Time = "09:00 - 10:00"
+                        },
+                        new
+                        {
+                            Id = 38,
+                            DoctorId = 5,
+                            IsDelete = false,
+                            Time = "10:00 - 11:00"
+                        },
+                        new
+                        {
+                            Id = 39,
+                            DoctorId = 5,
+                            IsDelete = false,
+                            Time = "11:00 - 12:00"
+                        },
+                        new
+                        {
+                            Id = 40,
+                            DoctorId = 5,
+                            IsDelete = false,
+                            Time = "12:00 - 13:00"
+                        },
+                        new
+                        {
+                            Id = 41,
+                            DoctorId = 5,
+                            IsDelete = false,
+                            Time = "13:00 - 14:00"
+                        },
+                        new
+                        {
+                            Id = 42,
+                            DoctorId = 5,
+                            IsDelete = false,
+                            Time = "14:00 - 15:00"
+                        },
+                        new
+                        {
+                            Id = 43,
+                            DoctorId = 5,
+                            IsDelete = false,
+                            Time = "15:00 - 16:00"
+                        },
+                        new
+                        {
+                            Id = 44,
+                            DoctorId = 5,
+                            IsDelete = false,
+                            Time = "16:00 - 17:00"
+                        },
+                        new
+                        {
+                            Id = 45,
+                            DoctorId = 5,
+                            IsDelete = false,
+                            Time = "17:00 - 18:00"
+                        },
+                        new
+                        {
+                            Id = 46,
+                            DoctorId = 6,
+                            IsDelete = false,
+                            Time = "09:00 - 10:00"
+                        },
+                        new
+                        {
+                            Id = 47,
+                            DoctorId = 6,
+                            IsDelete = false,
+                            Time = "10:00 - 11:00"
+                        },
+                        new
+                        {
+                            Id = 48,
+                            DoctorId = 6,
+                            IsDelete = false,
+                            Time = "11:00 - 12:00"
+                        },
+                        new
+                        {
+                            Id = 49,
+                            DoctorId = 6,
+                            IsDelete = false,
+                            Time = "12:00 - 13:00"
+                        },
+                        new
+                        {
+                            Id = 50,
+                            DoctorId = 6,
+                            IsDelete = false,
+                            Time = "13:00 - 14:00"
+                        },
+                        new
+                        {
+                            Id = 51,
+                            DoctorId = 6,
+                            IsDelete = false,
+                            Time = "14:00 - 15:00"
+                        },
+                        new
+                        {
+                            Id = 52,
+                            DoctorId = 6,
+                            IsDelete = false,
+                            Time = "15:00 - 16:00"
+                        },
+                        new
+                        {
+                            Id = 53,
+                            DoctorId = 6,
+                            IsDelete = false,
+                            Time = "16:00 - 17:00"
+                        },
+                        new
+                        {
+                            Id = 54,
+                            DoctorId = 6,
+                            IsDelete = false,
+                            Time = "17:00 - 18:00"
+                        },
+                        new
+                        {
+                            Id = 55,
+                            DoctorId = 7,
+                            IsDelete = false,
+                            Time = "09:00 - 10:00"
+                        },
+                        new
+                        {
+                            Id = 56,
+                            DoctorId = 7,
+                            IsDelete = false,
+                            Time = "10:00 - 11:00"
+                        },
+                        new
+                        {
+                            Id = 57,
+                            DoctorId = 7,
+                            IsDelete = false,
+                            Time = "11:00 - 12:00"
+                        },
+                        new
+                        {
+                            Id = 58,
+                            DoctorId = 7,
+                            IsDelete = false,
+                            Time = "12:00 - 13:00"
+                        },
+                        new
+                        {
+                            Id = 59,
+                            DoctorId = 8,
+                            IsDelete = false,
+                            Time = "13:00 - 14:00"
+                        },
+                        new
+                        {
+                            Id = 60,
+                            DoctorId = 8,
+                            IsDelete = false,
+                            Time = "14:00 - 15:00"
+                        },
+                        new
+                        {
+                            Id = 61,
+                            DoctorId = 8,
+                            IsDelete = false,
+                            Time = "15:00 - 16:00"
+                        },
+                        new
+                        {
+                            Id = 62,
+                            DoctorId = 8,
+                            IsDelete = false,
+                            Time = "16:00 - 17:00"
+                        },
+                        new
+                        {
+                            Id = 63,
+                            DoctorId = 8,
+                            IsDelete = false,
+                            Time = "17:00 - 18:00"
+                        },
+                        new
+                        {
+                            Id = 64,
+                            DoctorId = 9,
+                            IsDelete = false,
+                            Time = "09:00 - 10:00"
+                        },
+                        new
+                        {
+                            Id = 65,
+                            DoctorId = 9,
+                            IsDelete = false,
+                            Time = "10:00 - 11:00"
+                        },
+                        new
+                        {
+                            Id = 66,
+                            DoctorId = 9,
+                            IsDelete = false,
+                            Time = "11:00 - 12:00"
+                        },
+                        new
+                        {
+                            Id = 67,
+                            DoctorId = 9,
+                            IsDelete = false,
+                            Time = "12:00 - 13:00"
+                        },
+                        new
+                        {
+                            Id = 68,
+                            DoctorId = 10,
+                            IsDelete = false,
+                            Time = "13:00 - 14:00"
+                        },
+                        new
+                        {
+                            Id = 69,
+                            DoctorId = 10,
+                            IsDelete = false,
+                            Time = "14:00 - 15:00"
+                        },
+                        new
+                        {
+                            Id = 70,
+                            DoctorId = 10,
+                            IsDelete = false,
+                            Time = "15:00 - 16:00"
+                        },
+                        new
+                        {
+                            Id = 71,
+                            DoctorId = 10,
+                            IsDelete = false,
+                            Time = "16:00 - 17:00"
+                        },
+                        new
+                        {
+                            Id = 72,
+                            DoctorId = 10,
+                            IsDelete = false,
+                            Time = "17:00 - 18:00"
+                        },
+                        new
+                        {
+                            Id = 73,
+                            DoctorId = 11,
+                            IsDelete = false,
+                            Time = "09:00 - 10:00"
+                        },
+                        new
+                        {
+                            Id = 74,
+                            DoctorId = 11,
+                            IsDelete = false,
+                            Time = "10:00 - 11:00"
+                        },
+                        new
+                        {
+                            Id = 75,
+                            DoctorId = 11,
+                            IsDelete = false,
+                            Time = "11:00 - 12:00"
+                        },
+                        new
+                        {
+                            Id = 76,
+                            DoctorId = 11,
+                            IsDelete = false,
+                            Time = "12:00 - 13:00"
+                        },
+                        new
+                        {
+                            Id = 77,
+                            DoctorId = 12,
+                            IsDelete = false,
+                            Time = "13:00 - 14:00"
+                        },
+                        new
+                        {
+                            Id = 78,
+                            DoctorId = 12,
+                            IsDelete = false,
+                            Time = "14:00 - 15:00"
+                        },
+                        new
+                        {
+                            Id = 79,
+                            DoctorId = 12,
+                            IsDelete = false,
+                            Time = "15:00 - 16:00"
+                        },
+                        new
+                        {
+                            Id = 80,
+                            DoctorId = 13,
+                            IsDelete = false,
+                            Time = "16:00 - 17:00"
+                        },
+                        new
+                        {
+                            Id = 81,
+                            DoctorId = 13,
+                            IsDelete = false,
+                            Time = "17:00 - 18:00"
+                        },
+                        new
+                        {
+                            Id = 82,
+                            DoctorId = 14,
+                            IsDelete = false,
+                            Time = "09:00 - 10:00"
+                        },
+                        new
+                        {
+                            Id = 83,
+                            DoctorId = 14,
+                            IsDelete = false,
+                            Time = "10:00 - 11:00"
+                        },
+                        new
+                        {
+                            Id = 84,
+                            DoctorId = 15,
+                            IsDelete = false,
+                            Time = "11:00 - 12:00"
+                        },
+                        new
+                        {
+                            Id = 85,
+                            DoctorId = 15,
+                            IsDelete = false,
+                            Time = "12:00 - 13:00"
+                        },
+                        new
+                        {
+                            Id = 86,
+                            DoctorId = 15,
+                            IsDelete = false,
+                            Time = "13:00 - 14:00"
+                        },
+                        new
+                        {
+                            Id = 87,
+                            DoctorId = 16,
+                            IsDelete = false,
+                            Time = "14:00 - 15:00"
+                        },
+                        new
+                        {
+                            Id = 88,
+                            DoctorId = 16,
+                            IsDelete = false,
+                            Time = "15:00 - 16:00"
+                        },
+                        new
+                        {
+                            Id = 89,
+                            DoctorId = 17,
+                            IsDelete = false,
+                            Time = "10:00 - 11:00"
+                        },
+                        new
+                        {
+                            Id = 90,
+                            DoctorId = 17,
+                            IsDelete = false,
+                            Time = "11:00 - 12:00"
+                        },
+                        new
+                        {
+                            Id = 91,
+                            DoctorId = 18,
+                            IsDelete = false,
+                            Time = "09:00 - 10:00"
+                        },
+                        new
+                        {
+                            Id = 92,
+                            DoctorId = 18,
+                            IsDelete = false,
+                            Time = "10:00 - 11:00"
+                        },
+                        new
+                        {
+                            Id = 93,
+                            DoctorId = 18,
+                            IsDelete = false,
+                            Time = "11:00 - 12:00"
+                        },
+                        new
+                        {
+                            Id = 94,
+                            DoctorId = 18,
+                            IsDelete = false,
+                            Time = "12:00 - 13:00"
                         });
                 });
 
@@ -369,7 +993,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 1,
                             Author = "Dr. Nabiha Abdulkareem",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5469),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5046),
                             Description = "Before moving to the steps to manage migraine pain, we need to first understand what migraine is. Migraine is a common neurological issue that typically manifests as an intense headache coupled with symptoms such as nausea, vomiting, or an increased sensitivity to light and sound. It’s essential to note that the specific symptoms can vary based on the type of migraine the patient has. This condition is caused due to a complex interplay of genetic factors. It is often triggered by certain biological and environmental influences. The triggers that cause for a migraine attack to occur may be unique to each individual and can comprise various stimuli, such as specific food components, odours, or hormonal fluctuations. An episode of the pain caused by a migraine is referred to as a ‘migraine attack’. It is an episode of intense pain, caused due to different triggers. A combination of medicine, along with behavioural measures and lifestyle changes, can be a highly effective way to deal with migraines and even prevent migraine attacks in the future.",
                             ImagePath = "blog-2.jpg",
                             IsDelete = false,
@@ -379,7 +1003,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 2,
                             Author = "Dr. Benjamin Anderson",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5470),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5048),
                             Description = "Sports have always been important in encouraging people to be physically active, mentally healthy, and socially connected. Whether you’re a professional athlete or simply someone who enjoys an active lifestyle, sports injuries can be a significant setback. The term “sports injury” describes the many types of injuries that are often sustained when engaging in sports or exercising; however, they are not exclusive to athletes. Sports-related injuries tend to occur due to overuse, direct collisions, or the application of force that exceeds the body’s structural capacity. The good news is that many sports injuries can be prevented with the right precautions and strategies. Strains and sprains are among the most common sports injuries. A strain refers to the stretching or tearing of muscles or tendons, while a sprain involves ligament damage. These injuries can occur in various sports, from basketball to football, and even in everyday activities like lifting heavy objects. To prevent strains and sprains, it’s essential to maintain flexibility through regular stretching exercises.",
                             ImagePath = "blog-1.jpg",
                             IsDelete = false,
@@ -389,7 +1013,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 3,
                             Author = "Dr. Lucas Turner",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5471),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5049),
                             Description = "Rheumatoid Arthritis (RA) is a complex and debilitating autoimmune disease that affects millions of people worldwide. The main characteristic of rheumatoid arthritis is the body’s immune system accidentally attacking healthy cells, leading to inflammation (painful swelling) in the areas of the body affected. This chronic inflammatory condition can result in severe joint damage, pain, and decreased quality of life for those who suffer from it. Hand, wrist, and knee joints are often affected by RA. Chronic or long-lasting discomfort, instability (loss of balance), and deformity can all result from this tissue injury. In addition to these tissues, RA can harm other organs, including the heart, lungs, and eyes as well as other tissues all over the body. While there is no known cure for rheumatoid arthritis, early diagnosis and effective treatment can significantly improve the lives of affected individuals. Rheumatoid arthritis is a complex autoimmune disease that affects many aspects of a person’s life. Early diagnosis and appropriate treatment can significantly improve the quality of life for those living with this condition.",
                             ImagePath = "blog-3.jpg",
                             IsDelete = false,
@@ -399,7 +1023,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 4,
                             Author = "Dr. Nicholas Hall",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5479),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5050),
                             Description = "Catching dementia early and promptly starting treatment can significantly slow its progression, helping preserve cognitive abilities longer. Witnessing a loved one’s mental decline is undoubtedly difficult, but the early and middle stages still present opportunities for better outcomes through patience and compassion. In this article, we’ll explore subtle signs of dementia to monitor and when it’s time to seek medical evaluation. An early diagnosis enables critical treatments to help your loved one retain more of the qualities that make them who they are. As dementia progresses, spatial orientation and directional sense often decline. Your once very independent loved one may have always navigated their own neighbourhood flawlessly. But now when you take them out, they become disoriented and fail to recognise familiar landmarks and street names. Even short walks from their home to the car leave them turned around and confused.",
                             ImagePath = "blog-4.jpg",
                             IsDelete = false,
@@ -409,7 +1033,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 5,
                             Author = "Dr. Sophia Roberts",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5480),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5050),
                             Description = "Low blood pressure, often known as hypotension, is defined as a blood pressure measurement less than 90/60 mm Hg. This medical condition affects a large number of individuals, especially as they get older. Low blood pressure can be triggered by a number of causes, including adverse reactions to medications and medical conditions such as diabetes. If there are no symptoms, low blood pressure is not worrisome. Most medical professionals will only identify low blood pressure as a cause for concern if a patient exhibits its symptoms, such as blurred vision, dizziness, and fainting. Low blood pressure can lead to a heart attack or stroke, both of which might be fatal or result in long-term harm to the brain and heart. If anyone experiences concerns about low blood pressure symptoms, they should consult their doctor. Likewise, medical professionals can assess the adverse effects of medications and make changes as necessary.",
                             ImagePath = "blog-5.jpg",
                             IsDelete = false,
@@ -419,7 +1043,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 6,
                             Author = "Dr. Ava Lewis",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5481),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5051),
                             Description = "With the increase in old age, people experience joint injuries which are due to conditions like arthritis, fractures, and joint abnormalities. These conditions might cause hindrances in the quality of life of the patient. Thus, doctors suggest and perform joint replacement surgery. Metals, ceramics, or robust plastics can be used to make the artificial joint (prosthesis). The artificial joint behaves similarly to the native joint and has a comparable appearance. Any joint in the body can be replaced by a surgeon; however, hip replacement and knee replacement are the two most popular joint replacement procedures. Living with chronic pain can significantly influence a patient’s life negatively. Joint replacement surgery notably enhances the quality of life by reducing pain, aiding in proper sleep, and fostering a positive sense of well-being. The core muscles help support the back while standing and climbing stairs. They also prevent discomfort while lying down and reduce back pain. It is recommended to do core exercises to improve health and well-being.",
                             ImagePath = "blog-6.jpg",
                             IsDelete = false,
@@ -554,7 +1178,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 1,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5170),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4822),
                             Description = "Ophthalmology is a medical specialty dedicated to the health of the eyes. Ophthalmologists are highly trained physicians who diagnose and treat a wide range of eye conditions, from refractive errors like myopia and hyperopia to more complex issues such as glaucoma, cataracts, and retinal disorders. They use advanced diagnostic tools, including retinal imaging and visual field testing, and perform surgical procedures like LASIK for vision correction and cataract removal. Beyond addressing medical concerns, ophthalmologists also play a crucial role in enhancing the quality of life for individuals by preserving and improving their eyesight.",
                             ImagePath = "department-detail-Ophthalmology.jpg",
                             IsDelete = false,
@@ -564,7 +1188,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 2,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5172),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4823),
                             Description = "Neurology is the branch of medicine focused on the intricate network of the nervous system. Neurologists specialize in diagnosing and managing a diverse array of neurological disorders, encompassing conditions like epilepsy, multiple sclerosis, and Parkinson's disease. These specialists utilize advanced imaging technologies, such as magnetic resonance imaging (MRI) and electroencephalography (EEG), to study the brain's structure and function. Neurologists not only provide medical interventions but also work collaboratively with other healthcare professionals to enhance the overall well-being of patients dealing with complex neurological challenges.",
                             ImagePath = "department-detail-Neurology.jpg",
                             IsDelete = false,
@@ -574,7 +1198,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 3,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5173),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4824),
                             Description = "Radiology is a medical discipline integral to modern healthcare, utilizing various imaging techniques to visualize the internal structures of the body. Radiologists employ X-rays, computed tomography (CT) scans, magnetic resonance imaging (MRI), and other technologies to diagnose and monitor diseases. They play a critical role in guiding treatment decisions for conditions ranging from fractures to cancers. Radiology's continuous advancements contribute significantly to medical research, enabling a deeper understanding of anatomical structures and pathologies, ultimately leading to improved patient outcomes.",
                             ImagePath = "department-detail-Radiology.jpg",
                             IsDelete = false,
@@ -584,7 +1208,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 4,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5174),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4825),
                             Description = "Dermatology, the study of skin, hair, and nails, encompasses a broad spectrum of medical and aesthetic concerns. Dermatologists diagnose and treat skin conditions such as acne, eczema, and psoriasis, as well as skin cancer. Additionally, they provide cosmetic dermatology services, including Botox injections and laser treatments. Dermatologists are at the forefront of skin cancer prevention, conducting regular screenings and promoting sun safety. Their expertise extends beyond medical interventions, emphasizing holistic skin health and personalized care.",
                             ImagePath = "department-detail-Dermatology.jpg",
                             IsDelete = false,
@@ -594,7 +1218,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 5,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5177),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4826),
                             Description = "Haematology is the specialized field of medicine dedicated to the study and treatment of blood-related disorders. Hematologists investigate conditions such as anemia, leukemia, and clotting disorders. They employ diagnostic tools like blood tests and bone marrow examinations to determine the nature of blood disorders. Treatment modalities may include chemotherapy, blood transfusions, and stem cell transplants. Hematologists also contribute to research, advancing our understanding of blood diseases and developing innovative therapies to improve patient outcomes.",
                             ImagePath = "department-detail-Hematology.jpg",
                             IsDelete = false,
@@ -604,7 +1228,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 6,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5178),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4827),
                             Description = "Dentistry is a multifaceted medical specialty encompassing oral health and overall well-being. Dentists provide preventive care, including regular cleanings and oral examinations, to maintain optimal dental health. They diagnose and treat conditions such as cavities, gum disease, and oral infections. Dentistry also extends to restorative procedures like fillings, root canals, and extractions. Beyond clinical care, dentists emphasize patient education, promoting healthy oral hygiene practices to prevent dental issues and enhance overall quality of life.",
                             ImagePath = "department-detail-Dentistry.jpg",
                             IsDelete = false,
@@ -614,7 +1238,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 7,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5188),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4829),
                             Description = "Orthopedic surgery specializes in the treatment of musculoskeletal conditions, addressing issues related to bones, joints, ligaments, and muscles. Orthopedic surgeons perform a range of procedures, including joint replacements, arthroscopic surgeries, and fracture repairs. These interventions aim to alleviate pain, restore function, and improve the overall quality of life for patients with orthopedic concerns. Orthopedic surgeons collaborate closely with rehabilitation professionals to ensure comprehensive care, emphasizing both surgical expertise and holistic patient recovery.",
                             ImagePath = "department-detail-Orthopedic-Surgery.jpg",
                             IsDelete = false,
@@ -624,7 +1248,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 8,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5191),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4830),
                             Description = "Anesthesiology is a critical medical discipline responsible for ensuring patient comfort and safety during surgical and medical procedures. Anesthesiologists administer anesthesia, carefully monitoring vital signs and adjusting dosage to maintain an optimal balance between unconsciousness and physiological stability. Their expertise extends to pain management, pre-operative assessments, and post-operative care. Anesthesiologists play a pivotal role in surgical teams, contributing to the success of procedures and minimizing patient discomfort. Their commitment to precision and patient well-being is paramount in facilitating positive surgical outcomes.",
                             ImagePath = "department-detail-Anesthesiology.jpg",
                             IsDelete = false,
@@ -634,7 +1258,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 9,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5192),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4831),
                             Description = "Rheumatology focuses on the diagnosis and treatment of disorders affecting the joints, muscles, and connective tissues. Rheumatologists address conditions such as rheumatoid arthritis, lupus, and osteoarthritis. These specialists employ a comprehensive approach, utilizing medical history, physical examinations, and advanced imaging to formulate accurate diagnoses. Treatment plans may involve medication management, physical therapy, and lifestyle modifications. Rheumatologists also contribute to ongoing research, advancing our understanding of autoimmune and inflammatory conditions to optimize patient care and enhance long-term outcomes.",
                             ImagePath = "department-detail-Rheumatology.jpg",
                             IsDelete = false,
@@ -688,7 +1312,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 1,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5515),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5070),
                             DepartmentId = 2,
                             ImagePath = "doctor-1.jpg",
                             IsDelete = false,
@@ -698,7 +1322,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 2,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5516),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5071),
                             DepartmentId = 6,
                             ImagePath = "doctor-2.jpg",
                             IsDelete = false,
@@ -708,7 +1332,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 3,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5524),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5072),
                             DepartmentId = 1,
                             ImagePath = "doctor-3.jpg",
                             IsDelete = false,
@@ -718,7 +1342,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 4,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5525),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5073),
                             DepartmentId = 1,
                             ImagePath = "doctor-4.jpg",
                             IsDelete = false,
@@ -728,7 +1352,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 5,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5525),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5074),
                             DepartmentId = 3,
                             ImagePath = "doctor-19.jpg",
                             IsDelete = false,
@@ -738,7 +1362,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 6,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5526),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5074),
                             DepartmentId = 5,
                             ImagePath = "doctor-6.jpg",
                             IsDelete = false,
@@ -748,7 +1372,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 7,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5527),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5075),
                             DepartmentId = 3,
                             ImagePath = "doctor-7.jpg",
                             IsDelete = false,
@@ -758,7 +1382,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 8,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5528),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5076),
                             DepartmentId = 1,
                             ImagePath = "doctor-8.jpg",
                             IsDelete = false,
@@ -768,7 +1392,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 9,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5529),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5077),
                             DepartmentId = 8,
                             ImagePath = "doctor-9.jpg",
                             IsDelete = false,
@@ -778,7 +1402,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 10,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5531),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5078),
                             DepartmentId = 8,
                             ImagePath = "doctor-10.jpg",
                             IsDelete = false,
@@ -788,7 +1412,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 11,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5531),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5079),
                             DepartmentId = 6,
                             ImagePath = "doctor-11.jpg",
                             IsDelete = false,
@@ -798,7 +1422,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 12,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5532),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5080),
                             DepartmentId = 2,
                             ImagePath = "doctor-12.jpg",
                             IsDelete = false,
@@ -808,7 +1432,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 13,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5534),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5081),
                             DepartmentId = 7,
                             ImagePath = "doctor-13.jpg",
                             IsDelete = false,
@@ -818,7 +1442,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 14,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5535),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5082),
                             DepartmentId = 2,
                             ImagePath = "doctor-14.jpg",
                             IsDelete = false,
@@ -828,7 +1452,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 15,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5537),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5083),
                             DepartmentId = 7,
                             ImagePath = "doctor-15.jpg",
                             IsDelete = false,
@@ -838,7 +1462,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 16,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5539),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5083),
                             DepartmentId = 9,
                             ImagePath = "doctor-16.jpg",
                             IsDelete = false,
@@ -848,7 +1472,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 17,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5545),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5086),
                             DepartmentId = 9,
                             ImagePath = "doctor-17.jpg",
                             IsDelete = false,
@@ -858,7 +1482,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 18,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5546),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5087),
                             DepartmentId = 5,
                             ImagePath = "doctor-18.jpg",
                             IsDelete = false,
@@ -929,7 +1553,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 1,
                             CallNumber = "(+465)464-654-65461",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5588),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5105),
                             Degree = "High degree",
                             DoctorId = 1,
                             Experience = "Many years of experience",
@@ -943,7 +1567,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 2,
                             CallNumber = "(+465)464-654-65461",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5589),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5107),
                             Degree = "High degree",
                             DoctorId = 2,
                             Experience = "Many years of experience",
@@ -957,7 +1581,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 3,
                             CallNumber = "(+465)464-654-65461",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5591),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5108),
                             Degree = "High degree",
                             DoctorId = 3,
                             Experience = "Many years of experience",
@@ -971,7 +1595,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 4,
                             CallNumber = "(+465)464-654-65461",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5592),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5109),
                             Degree = "High degree",
                             DoctorId = 4,
                             Experience = "Many years of experience",
@@ -985,7 +1609,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 5,
                             CallNumber = "(+465)464-654-65461",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5595),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5111),
                             Degree = "High degree",
                             DoctorId = 5,
                             Experience = "Many years of experience",
@@ -999,7 +1623,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 6,
                             CallNumber = "(+465)464-654-65461",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5596),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5112),
                             Degree = "High degree",
                             DoctorId = 6,
                             Experience = "Many years of experience",
@@ -1013,7 +1637,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 7,
                             CallNumber = "(+465)464-654-65461",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5598),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5113),
                             Degree = "High degree",
                             DoctorId = 7,
                             Experience = "Many years of experience",
@@ -1027,7 +1651,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 8,
                             CallNumber = "(+465)464-654-65461",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5599),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5114),
                             Degree = "High degree",
                             DoctorId = 8,
                             Experience = "Many years of experience",
@@ -1041,7 +1665,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 9,
                             CallNumber = "(+465)464-654-65461",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5601),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5115),
                             Degree = "High degree",
                             DoctorId = 9,
                             Experience = "Many years of experience",
@@ -1055,7 +1679,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 10,
                             CallNumber = "(+465)464-654-65461",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5602),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5117),
                             Degree = "High degree",
                             DoctorId = 10,
                             Experience = "Many years of experience",
@@ -1069,7 +1693,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 11,
                             CallNumber = "(+465)464-654-65461",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5604),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5118),
                             Degree = "High degree",
                             DoctorId = 11,
                             Experience = "Many years of experience",
@@ -1083,7 +1707,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 12,
                             CallNumber = "(+465)464-654-65461",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5605),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5119),
                             Degree = "High degree",
                             DoctorId = 12,
                             Experience = "Many years of experience",
@@ -1097,7 +1721,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 13,
                             CallNumber = "(+465)464-654-65461",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5606),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5154),
                             Degree = "High degree",
                             DoctorId = 13,
                             Experience = "Many years of experience",
@@ -1111,7 +1735,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 14,
                             CallNumber = "(+465)464-654-65461",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5607),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5156),
                             Degree = "High degree",
                             DoctorId = 14,
                             Experience = "Many years of experience",
@@ -1125,7 +1749,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 15,
                             CallNumber = "(+465)464-654-65461",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5608),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5157),
                             Degree = "High degree",
                             DoctorId = 15,
                             Experience = "Many years of experience",
@@ -1139,7 +1763,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 16,
                             CallNumber = "(+465)464-654-65461",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5609),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5158),
                             Degree = "High degree",
                             DoctorId = 16,
                             Experience = "Many years of experience",
@@ -1153,7 +1777,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 17,
                             CallNumber = "(+465)464-654-65461",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5610),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5159),
                             Degree = "High degree",
                             DoctorId = 17,
                             Experience = "Many years of experience",
@@ -1167,7 +1791,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 18,
                             CallNumber = "(+465)464-654-65461",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5612),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5160),
                             Degree = "High degree",
                             DoctorId = 18,
                             Experience = "Many years of experience",
@@ -1215,7 +1839,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 1,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5146),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4803),
                             Description = "Blood donation, a life-saving act transcending borders and cultures, share the gift of life.",
                             IsDelete = false,
                             Title = "Your gift holds great power donate today!"
@@ -1301,56 +1925,56 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 1,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5344),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4907),
                             ImagePath = "gallery-1.jpg",
                             IsDelete = false
                         },
                         new
                         {
                             Id = 2,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5345),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4908),
                             ImagePath = "gallery-2.jpg",
                             IsDelete = false
                         },
                         new
                         {
                             Id = 3,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5346),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4909),
                             ImagePath = "gallery-3.jpg",
                             IsDelete = false
                         },
                         new
                         {
                             Id = 4,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5348),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4910),
                             ImagePath = "gallery-4.jpg",
                             IsDelete = false
                         },
                         new
                         {
                             Id = 5,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5348),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4911),
                             ImagePath = "gallery-5.jpg",
                             IsDelete = false
                         },
                         new
                         {
                             Id = 6,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5349),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4912),
                             ImagePath = "gallery-6.jpg",
                             IsDelete = false
                         },
                         new
                         {
                             Id = 7,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5350),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4912),
                             ImagePath = "gallery-7.jpg",
                             IsDelete = false
                         },
                         new
                         {
                             Id = 8,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5351),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4913),
                             ImagePath = "gallery-8.jpg",
                             IsDelete = false
                         });
@@ -1388,35 +2012,35 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 1,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5630),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5182),
                             IsDelete = false,
                             Name = "Depressants"
                         },
                         new
                         {
                             Id = 2,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5630),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5182),
                             IsDelete = false,
                             Name = "Stimulants"
                         },
                         new
                         {
                             Id = 3,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5631),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5183),
                             IsDelete = false,
                             Name = "Inhalants"
                         },
                         new
                         {
                             Id = 4,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5632),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5184),
                             IsDelete = false,
                             Name = "Hallucinogens"
                         },
                         new
                         {
                             Id = 5,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5632),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5185),
                             IsDelete = false,
                             Name = "Prescription Drugs"
                         });
@@ -1474,7 +2098,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5660),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5203),
                             InStock = 20,
                             IsDelete = false,
                             LongDescription = "Discover a breakthrough in healthcare with our cutting-edge medication. Crafted through extensive research and development, this innovative solution is designed to address a spectrum of health concerns. From alleviating discomfort to promoting overall wellness, our medication stands at the forefront of pharmaceutical advancement. What sets our product apart is its meticulously curated formula, drawing on the latest scientific insights. We prioritize not only symptom relief but also tackle the underlying causes of ailments. This holistic approach ensures a comprehensive impact on your health, fostering sustained well-being. We understand the importance of trust when it comes to your health. That's why our medication is manufactured with the highest quality standards, adhering to rigorous protocols. Each ingredient is carefully selected, and the production process is closely monitored to guarantee safety and efficacy. Take the first step toward a healthier, more vibrant life by integrating our medication into your wellness routine. Whether you're managing chronic conditions or seeking preventive care, our product is versatile and adaptable to your unique needs. It's time to reclaim control over your health and embrace a brighter, healthier future. Join the countless individuals who have experienced the positive effects of our medication. Empower yourself with a solution that goes beyond symptom suppression, offering a pathway to lasting vitality. Invest in your well-being today, because your health is worth it.",
@@ -1486,7 +2110,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 2,
                             CategoryId = 1,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5662),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5204),
                             InStock = 25,
                             IsDelete = false,
                             LongDescription = "Discover a breakthrough in healthcare with our cutting-edge medication. Crafted through extensive research and development, this innovative solution is designed to address a spectrum of health concerns. From alleviating discomfort to promoting overall wellness, our medication stands at the forefront of pharmaceutical advancement. What sets our product apart is its meticulously curated formula, drawing on the latest scientific insights. We prioritize not only symptom relief but also tackle the underlying causes of ailments. This holistic approach ensures a comprehensive impact on your health, fostering sustained well-being. We understand the importance of trust when it comes to your health. That's why our medication is manufactured with the highest quality standards, adhering to rigorous protocols. Each ingredient is carefully selected, and the production process is closely monitored to guarantee safety and efficacy. Take the first step toward a healthier, more vibrant life by integrating our medication into your wellness routine. Whether you're managing chronic conditions or seeking preventive care, our product is versatile and adaptable to your unique needs. It's time to reclaim control over your health and embrace a brighter, healthier future. Join the countless individuals who have experienced the positive effects of our medication. Empower yourself with a solution that goes beyond symptom suppression, offering a pathway to lasting vitality. Invest in your well-being today, because your health is worth it.",
@@ -1498,7 +2122,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 3,
                             CategoryId = 1,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5662),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5205),
                             InStock = 55,
                             IsDelete = false,
                             LongDescription = "Discover a breakthrough in healthcare with our cutting-edge medication. Crafted through extensive research and development, this innovative solution is designed to address a spectrum of health concerns. From alleviating discomfort to promoting overall wellness, our medication stands at the forefront of pharmaceutical advancement. What sets our product apart is its meticulously curated formula, drawing on the latest scientific insights. We prioritize not only symptom relief but also tackle the underlying causes of ailments. This holistic approach ensures a comprehensive impact on your health, fostering sustained well-being. We understand the importance of trust when it comes to your health. That's why our medication is manufactured with the highest quality standards, adhering to rigorous protocols. Each ingredient is carefully selected, and the production process is closely monitored to guarantee safety and efficacy. Take the first step toward a healthier, more vibrant life by integrating our medication into your wellness routine. Whether you're managing chronic conditions or seeking preventive care, our product is versatile and adaptable to your unique needs. It's time to reclaim control over your health and embrace a brighter, healthier future. Join the countless individuals who have experienced the positive effects of our medication. Empower yourself with a solution that goes beyond symptom suppression, offering a pathway to lasting vitality. Invest in your well-being today, because your health is worth it.",
@@ -1510,7 +2134,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 4,
                             CategoryId = 2,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5665),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5206),
                             InStock = 15,
                             IsDelete = false,
                             LongDescription = "Discover a breakthrough in healthcare with our cutting-edge medication. Crafted through extensive research and development, this innovative solution is designed to address a spectrum of health concerns. From alleviating discomfort to promoting overall wellness, our medication stands at the forefront of pharmaceutical advancement. What sets our product apart is its meticulously curated formula, drawing on the latest scientific insights. We prioritize not only symptom relief but also tackle the underlying causes of ailments. This holistic approach ensures a comprehensive impact on your health, fostering sustained well-being. We understand the importance of trust when it comes to your health. That's why our medication is manufactured with the highest quality standards, adhering to rigorous protocols. Each ingredient is carefully selected, and the production process is closely monitored to guarantee safety and efficacy. Take the first step toward a healthier, more vibrant life by integrating our medication into your wellness routine. Whether you're managing chronic conditions or seeking preventive care, our product is versatile and adaptable to your unique needs. It's time to reclaim control over your health and embrace a brighter, healthier future. Join the countless individuals who have experienced the positive effects of our medication. Empower yourself with a solution that goes beyond symptom suppression, offering a pathway to lasting vitality. Invest in your well-being today, because your health is worth it.",
@@ -1522,7 +2146,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 5,
                             CategoryId = 2,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5666),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5207),
                             InStock = 25,
                             IsDelete = false,
                             LongDescription = "Discover a breakthrough in healthcare with our cutting-edge medication. Crafted through extensive research and development, this innovative solution is designed to address a spectrum of health concerns. From alleviating discomfort to promoting overall wellness, our medication stands at the forefront of pharmaceutical advancement. What sets our product apart is its meticulously curated formula, drawing on the latest scientific insights. We prioritize not only symptom relief but also tackle the underlying causes of ailments. This holistic approach ensures a comprehensive impact on your health, fostering sustained well-being. We understand the importance of trust when it comes to your health. That's why our medication is manufactured with the highest quality standards, adhering to rigorous protocols. Each ingredient is carefully selected, and the production process is closely monitored to guarantee safety and efficacy. Take the first step toward a healthier, more vibrant life by integrating our medication into your wellness routine. Whether you're managing chronic conditions or seeking preventive care, our product is versatile and adaptable to your unique needs. It's time to reclaim control over your health and embrace a brighter, healthier future. Join the countless individuals who have experienced the positive effects of our medication. Empower yourself with a solution that goes beyond symptom suppression, offering a pathway to lasting vitality. Invest in your well-being today, because your health is worth it.",
@@ -1534,7 +2158,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 6,
                             CategoryId = 2,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5667),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5208),
                             InStock = 25,
                             IsDelete = false,
                             LongDescription = "Discover a breakthrough in healthcare with our cutting-edge medication. Crafted through extensive research and development, this innovative solution is designed to address a spectrum of health concerns. From alleviating discomfort to promoting overall wellness, our medication stands at the forefront of pharmaceutical advancement. What sets our product apart is its meticulously curated formula, drawing on the latest scientific insights. We prioritize not only symptom relief but also tackle the underlying causes of ailments. This holistic approach ensures a comprehensive impact on your health, fostering sustained well-being. We understand the importance of trust when it comes to your health. That's why our medication is manufactured with the highest quality standards, adhering to rigorous protocols. Each ingredient is carefully selected, and the production process is closely monitored to guarantee safety and efficacy. Take the first step toward a healthier, more vibrant life by integrating our medication into your wellness routine. Whether you're managing chronic conditions or seeking preventive care, our product is versatile and adaptable to your unique needs. It's time to reclaim control over your health and embrace a brighter, healthier future. Join the countless individuals who have experienced the positive effects of our medication. Empower yourself with a solution that goes beyond symptom suppression, offering a pathway to lasting vitality. Invest in your well-being today, because your health is worth it.",
@@ -1546,7 +2170,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 7,
                             CategoryId = 3,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5667),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5209),
                             InStock = 35,
                             IsDelete = false,
                             LongDescription = "Discover a breakthrough in healthcare with our cutting-edge medication. Crafted through extensive research and development, this innovative solution is designed to address a spectrum of health concerns. From alleviating discomfort to promoting overall wellness, our medication stands at the forefront of pharmaceutical advancement. What sets our product apart is its meticulously curated formula, drawing on the latest scientific insights. We prioritize not only symptom relief but also tackle the underlying causes of ailments. This holistic approach ensures a comprehensive impact on your health, fostering sustained well-being. We understand the importance of trust when it comes to your health. That's why our medication is manufactured with the highest quality standards, adhering to rigorous protocols. Each ingredient is carefully selected, and the production process is closely monitored to guarantee safety and efficacy. Take the first step toward a healthier, more vibrant life by integrating our medication into your wellness routine. Whether you're managing chronic conditions or seeking preventive care, our product is versatile and adaptable to your unique needs. It's time to reclaim control over your health and embrace a brighter, healthier future. Join the countless individuals who have experienced the positive effects of our medication. Empower yourself with a solution that goes beyond symptom suppression, offering a pathway to lasting vitality. Invest in your well-being today, because your health is worth it.",
@@ -1558,7 +2182,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 8,
                             CategoryId = 3,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5670),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5210),
                             InStock = 10,
                             IsDelete = false,
                             LongDescription = "Discover a breakthrough in healthcare with our cutting-edge medication. Crafted through extensive research and development, this innovative solution is designed to address a spectrum of health concerns. From alleviating discomfort to promoting overall wellness, our medication stands at the forefront of pharmaceutical advancement. What sets our product apart is its meticulously curated formula, drawing on the latest scientific insights. We prioritize not only symptom relief but also tackle the underlying causes of ailments. This holistic approach ensures a comprehensive impact on your health, fostering sustained well-being. We understand the importance of trust when it comes to your health. That's why our medication is manufactured with the highest quality standards, adhering to rigorous protocols. Each ingredient is carefully selected, and the production process is closely monitored to guarantee safety and efficacy. Take the first step toward a healthier, more vibrant life by integrating our medication into your wellness routine. Whether you're managing chronic conditions or seeking preventive care, our product is versatile and adaptable to your unique needs. It's time to reclaim control over your health and embrace a brighter, healthier future. Join the countless individuals who have experienced the positive effects of our medication. Empower yourself with a solution that goes beyond symptom suppression, offering a pathway to lasting vitality. Invest in your well-being today, because your health is worth it.",
@@ -1570,7 +2194,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 9,
                             CategoryId = 3,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5671),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5212),
                             InStock = 10,
                             IsDelete = false,
                             LongDescription = "Discover a breakthrough in healthcare with our cutting-edge medication. Crafted through extensive research and development, this innovative solution is designed to address a spectrum of health concerns. From alleviating discomfort to promoting overall wellness, our medication stands at the forefront of pharmaceutical advancement. What sets our product apart is its meticulously curated formula, drawing on the latest scientific insights. We prioritize not only symptom relief but also tackle the underlying causes of ailments. This holistic approach ensures a comprehensive impact on your health, fostering sustained well-being. We understand the importance of trust when it comes to your health. That's why our medication is manufactured with the highest quality standards, adhering to rigorous protocols. Each ingredient is carefully selected, and the production process is closely monitored to guarantee safety and efficacy. Take the first step toward a healthier, more vibrant life by integrating our medication into your wellness routine. Whether you're managing chronic conditions or seeking preventive care, our product is versatile and adaptable to your unique needs. It's time to reclaim control over your health and embrace a brighter, healthier future. Join the countless individuals who have experienced the positive effects of our medication. Empower yourself with a solution that goes beyond symptom suppression, offering a pathway to lasting vitality. Invest in your well-being today, because your health is worth it.",
@@ -1582,7 +2206,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 10,
                             CategoryId = 4,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5672),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5213),
                             InStock = 20,
                             IsDelete = false,
                             LongDescription = "Discover a breakthrough in healthcare with our cutting-edge medication. Crafted through extensive research and development, this innovative solution is designed to address a spectrum of health concerns. From alleviating discomfort to promoting overall wellness, our medication stands at the forefront of pharmaceutical advancement. What sets our product apart is its meticulously curated formula, drawing on the latest scientific insights. We prioritize not only symptom relief but also tackle the underlying causes of ailments. This holistic approach ensures a comprehensive impact on your health, fostering sustained well-being. We understand the importance of trust when it comes to your health. That's why our medication is manufactured with the highest quality standards, adhering to rigorous protocols. Each ingredient is carefully selected, and the production process is closely monitored to guarantee safety and efficacy. Take the first step toward a healthier, more vibrant life by integrating our medication into your wellness routine. Whether you're managing chronic conditions or seeking preventive care, our product is versatile and adaptable to your unique needs. It's time to reclaim control over your health and embrace a brighter, healthier future. Join the countless individuals who have experienced the positive effects of our medication. Empower yourself with a solution that goes beyond symptom suppression, offering a pathway to lasting vitality. Invest in your well-being today, because your health is worth it.",
@@ -1594,7 +2218,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 11,
                             CategoryId = 4,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5675),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5213),
                             InStock = 15,
                             IsDelete = false,
                             LongDescription = "Discover a breakthrough in healthcare with our cutting-edge medication. Crafted through extensive research and development, this innovative solution is designed to address a spectrum of health concerns. From alleviating discomfort to promoting overall wellness, our medication stands at the forefront of pharmaceutical advancement. What sets our product apart is its meticulously curated formula, drawing on the latest scientific insights. We prioritize not only symptom relief but also tackle the underlying causes of ailments. This holistic approach ensures a comprehensive impact on your health, fostering sustained well-being. We understand the importance of trust when it comes to your health. That's why our medication is manufactured with the highest quality standards, adhering to rigorous protocols. Each ingredient is carefully selected, and the production process is closely monitored to guarantee safety and efficacy. Take the first step toward a healthier, more vibrant life by integrating our medication into your wellness routine. Whether you're managing chronic conditions or seeking preventive care, our product is versatile and adaptable to your unique needs. It's time to reclaim control over your health and embrace a brighter, healthier future. Join the countless individuals who have experienced the positive effects of our medication. Empower yourself with a solution that goes beyond symptom suppression, offering a pathway to lasting vitality. Invest in your well-being today, because your health is worth it.",
@@ -1606,7 +2230,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 12,
                             CategoryId = 4,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5676),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5214),
                             InStock = 25,
                             IsDelete = false,
                             LongDescription = "Discover a breakthrough in healthcare with our cutting-edge medication. Crafted through extensive research and development, this innovative solution is designed to address a spectrum of health concerns. From alleviating discomfort to promoting overall wellness, our medication stands at the forefront of pharmaceutical advancement. What sets our product apart is its meticulously curated formula, drawing on the latest scientific insights. We prioritize not only symptom relief but also tackle the underlying causes of ailments. This holistic approach ensures a comprehensive impact on your health, fostering sustained well-being. We understand the importance of trust when it comes to your health. That's why our medication is manufactured with the highest quality standards, adhering to rigorous protocols. Each ingredient is carefully selected, and the production process is closely monitored to guarantee safety and efficacy. Take the first step toward a healthier, more vibrant life by integrating our medication into your wellness routine. Whether you're managing chronic conditions or seeking preventive care, our product is versatile and adaptable to your unique needs. It's time to reclaim control over your health and embrace a brighter, healthier future. Join the countless individuals who have experienced the positive effects of our medication. Empower yourself with a solution that goes beyond symptom suppression, offering a pathway to lasting vitality. Invest in your well-being today, because your health is worth it.",
@@ -1618,7 +2242,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 13,
                             CategoryId = 5,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5677),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5215),
                             InStock = 15,
                             IsDelete = false,
                             LongDescription = "Discover a breakthrough in healthcare with our cutting-edge medication. Crafted through extensive research and development, this innovative solution is designed to address a spectrum of health concerns. From alleviating discomfort to promoting overall wellness, our medication stands at the forefront of pharmaceutical advancement. What sets our product apart is its meticulously curated formula, drawing on the latest scientific insights. We prioritize not only symptom relief but also tackle the underlying causes of ailments. This holistic approach ensures a comprehensive impact on your health, fostering sustained well-being. We understand the importance of trust when it comes to your health. That's why our medication is manufactured with the highest quality standards, adhering to rigorous protocols. Each ingredient is carefully selected, and the production process is closely monitored to guarantee safety and efficacy. Take the first step toward a healthier, more vibrant life by integrating our medication into your wellness routine. Whether you're managing chronic conditions or seeking preventive care, our product is versatile and adaptable to your unique needs. It's time to reclaim control over your health and embrace a brighter, healthier future. Join the countless individuals who have experienced the positive effects of our medication. Empower yourself with a solution that goes beyond symptom suppression, offering a pathway to lasting vitality. Invest in your well-being today, because your health is worth it.",
@@ -1630,7 +2254,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 14,
                             CategoryId = 5,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5685),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5216),
                             InStock = 15,
                             IsDelete = false,
                             LongDescription = "Discover a breakthrough in healthcare with our cutting-edge medication. Crafted through extensive research and development, this innovative solution is designed to address a spectrum of health concerns. From alleviating discomfort to promoting overall wellness, our medication stands at the forefront of pharmaceutical advancement. What sets our product apart is its meticulously curated formula, drawing on the latest scientific insights. We prioritize not only symptom relief but also tackle the underlying causes of ailments. This holistic approach ensures a comprehensive impact on your health, fostering sustained well-being. We understand the importance of trust when it comes to your health. That's why our medication is manufactured with the highest quality standards, adhering to rigorous protocols. Each ingredient is carefully selected, and the production process is closely monitored to guarantee safety and efficacy. Take the first step toward a healthier, more vibrant life by integrating our medication into your wellness routine. Whether you're managing chronic conditions or seeking preventive care, our product is versatile and adaptable to your unique needs. It's time to reclaim control over your health and embrace a brighter, healthier future. Join the countless individuals who have experienced the positive effects of our medication. Empower yourself with a solution that goes beyond symptom suppression, offering a pathway to lasting vitality. Invest in your well-being today, because your health is worth it.",
@@ -1642,7 +2266,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 15,
                             CategoryId = 5,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5686),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5217),
                             InStock = 25,
                             IsDelete = false,
                             LongDescription = "Discover a breakthrough in healthcare with our cutting-edge medication. Crafted through extensive research and development, this innovative solution is designed to address a spectrum of health concerns. From alleviating discomfort to promoting overall wellness, our medication stands at the forefront of pharmaceutical advancement. What sets our product apart is its meticulously curated formula, drawing on the latest scientific insights. We prioritize not only symptom relief but also tackle the underlying causes of ailments. This holistic approach ensures a comprehensive impact on your health, fostering sustained well-being. We understand the importance of trust when it comes to your health. That's why our medication is manufactured with the highest quality standards, adhering to rigorous protocols. Each ingredient is carefully selected, and the production process is closely monitored to guarantee safety and efficacy. Take the first step toward a healthier, more vibrant life by integrating our medication into your wellness routine. Whether you're managing chronic conditions or seeking preventive care, our product is versatile and adaptable to your unique needs. It's time to reclaim control over your health and embrace a brighter, healthier future. Join the countless individuals who have experienced the positive effects of our medication. Empower yourself with a solution that goes beyond symptom suppression, offering a pathway to lasting vitality. Invest in your well-being today, because your health is worth it.",
@@ -1695,7 +2319,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 1,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5710),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5242),
                             DrugId = 1,
                             ImagePath = "product-1.png",
                             IsDelete = false,
@@ -1705,7 +2329,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 2,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5711),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5243),
                             DrugId = 1,
                             ImagePath = "product-left-side.png",
                             IsDelete = false,
@@ -1715,7 +2339,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 3,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5712),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5244),
                             DrugId = 1,
                             ImagePath = "product-right-side.png",
                             IsDelete = false,
@@ -1725,7 +2349,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 4,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5712),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5245),
                             DrugId = 1,
                             ImagePath = "product-box.png",
                             IsDelete = false,
@@ -1735,7 +2359,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 5,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5713),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5246),
                             DrugId = 1,
                             ImagePath = "product-pill.png",
                             IsDelete = false,
@@ -1745,7 +2369,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 6,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5714),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5247),
                             DrugId = 2,
                             ImagePath = "product-2.png",
                             IsDelete = false,
@@ -1755,7 +2379,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 7,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5715),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5248),
                             DrugId = 2,
                             ImagePath = "product-left-side.png",
                             IsDelete = false,
@@ -1765,7 +2389,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 8,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5715),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5249),
                             DrugId = 2,
                             ImagePath = "product-right-side.png",
                             IsDelete = false,
@@ -1775,7 +2399,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 9,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5716),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5252),
                             DrugId = 2,
                             ImagePath = "product-box.png",
                             IsDelete = false,
@@ -1785,7 +2409,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 10,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5719),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5253),
                             DrugId = 2,
                             ImagePath = "product-pill.png",
                             IsDelete = false,
@@ -1795,7 +2419,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 11,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5719),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5254),
                             DrugId = 3,
                             ImagePath = "product-3.png",
                             IsDelete = false,
@@ -1805,7 +2429,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 12,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5720),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5255),
                             DrugId = 3,
                             ImagePath = "product-left-side.png",
                             IsDelete = false,
@@ -1815,7 +2439,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 13,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5721),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5256),
                             DrugId = 3,
                             ImagePath = "product-right-side.png",
                             IsDelete = false,
@@ -1825,7 +2449,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 14,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5724),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5257),
                             DrugId = 3,
                             ImagePath = "product-box.png",
                             IsDelete = false,
@@ -1835,7 +2459,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 15,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5725),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5257),
                             DrugId = 3,
                             ImagePath = "product-pill.png",
                             IsDelete = false,
@@ -1845,7 +2469,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 16,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5726),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5258),
                             DrugId = 4,
                             ImagePath = "product-4.png",
                             IsDelete = false,
@@ -1855,7 +2479,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 17,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5727),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5259),
                             DrugId = 4,
                             ImagePath = "product-left-side.png",
                             IsDelete = false,
@@ -1865,7 +2489,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 18,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5736),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5260),
                             DrugId = 4,
                             ImagePath = "product-right-side.png",
                             IsDelete = false,
@@ -1875,7 +2499,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 19,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5737),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5261),
                             DrugId = 4,
                             ImagePath = "product-box.png",
                             IsDelete = false,
@@ -1885,7 +2509,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 20,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5737),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5262),
                             DrugId = 4,
                             ImagePath = "product-pill.png",
                             IsDelete = false,
@@ -1895,7 +2519,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 21,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5738),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5262),
                             DrugId = 5,
                             ImagePath = "product-5.png",
                             IsDelete = false,
@@ -1905,7 +2529,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 22,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5739),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5263),
                             DrugId = 5,
                             ImagePath = "product-left-side.png",
                             IsDelete = false,
@@ -1915,7 +2539,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 23,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5741),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5264),
                             DrugId = 5,
                             ImagePath = "product-right-side.png",
                             IsDelete = false,
@@ -1925,7 +2549,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 24,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5742),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5265),
                             DrugId = 5,
                             ImagePath = "product-box.png",
                             IsDelete = false,
@@ -1935,7 +2559,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 25,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5743),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5267),
                             DrugId = 5,
                             ImagePath = "product-pill.png",
                             IsDelete = false,
@@ -1945,7 +2569,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 26,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5744),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5268),
                             DrugId = 6,
                             ImagePath = "product-6.png",
                             IsDelete = false,
@@ -1955,7 +2579,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 27,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5745),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5269),
                             DrugId = 6,
                             ImagePath = "product-left-side.png",
                             IsDelete = false,
@@ -1965,7 +2589,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 28,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5745),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5313),
                             DrugId = 6,
                             ImagePath = "product-right-side.png",
                             IsDelete = false,
@@ -1975,7 +2599,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 29,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5747),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5313),
                             DrugId = 6,
                             ImagePath = "product-box.png",
                             IsDelete = false,
@@ -1985,7 +2609,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 30,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5748),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5314),
                             DrugId = 6,
                             ImagePath = "product-pill.png",
                             IsDelete = false,
@@ -1995,7 +2619,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 31,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5748),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5315),
                             DrugId = 7,
                             ImagePath = "product-7.png",
                             IsDelete = false,
@@ -2005,7 +2629,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 32,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5750),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5316),
                             DrugId = 7,
                             ImagePath = "product-left-side.png",
                             IsDelete = false,
@@ -2015,7 +2639,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 33,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5751),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5317),
                             DrugId = 7,
                             ImagePath = "product-right-side.png",
                             IsDelete = false,
@@ -2025,7 +2649,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 34,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5752),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5318),
                             DrugId = 7,
                             ImagePath = "product-box.png",
                             IsDelete = false,
@@ -2035,7 +2659,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 35,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5753),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5318),
                             DrugId = 7,
                             ImagePath = "product-pill.png",
                             IsDelete = false,
@@ -2045,7 +2669,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 36,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5754),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5319),
                             DrugId = 8,
                             ImagePath = "product-8.png",
                             IsDelete = false,
@@ -2055,7 +2679,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 37,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5755),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5320),
                             DrugId = 8,
                             ImagePath = "product-left-side.png",
                             IsDelete = false,
@@ -2065,7 +2689,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 38,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5756),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5321),
                             DrugId = 8,
                             ImagePath = "product-right-side.png",
                             IsDelete = false,
@@ -2075,7 +2699,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 39,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5756),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5322),
                             DrugId = 8,
                             ImagePath = "product-box.png",
                             IsDelete = false,
@@ -2085,7 +2709,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 40,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5758),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5324),
                             DrugId = 8,
                             ImagePath = "product-pill.png",
                             IsDelete = false,
@@ -2095,7 +2719,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 41,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5759),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5325),
                             DrugId = 9,
                             ImagePath = "product-9.png",
                             IsDelete = false,
@@ -2105,7 +2729,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 42,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5760),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5326),
                             DrugId = 9,
                             ImagePath = "product-left-side.png",
                             IsDelete = false,
@@ -2115,7 +2739,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 43,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5760),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5326),
                             DrugId = 9,
                             ImagePath = "product-right-side.png",
                             IsDelete = false,
@@ -2125,7 +2749,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 44,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5763),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5327),
                             DrugId = 9,
                             ImagePath = "product-box.png",
                             IsDelete = false,
@@ -2135,7 +2759,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 45,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5763),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5328),
                             DrugId = 9,
                             ImagePath = "product-pill.png",
                             IsDelete = false,
@@ -2145,7 +2769,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 46,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5764),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5329),
                             DrugId = 10,
                             ImagePath = "product-10.png",
                             IsDelete = false,
@@ -2155,7 +2779,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 47,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5765),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5330),
                             DrugId = 10,
                             ImagePath = "product-left-side.png",
                             IsDelete = false,
@@ -2165,7 +2789,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 48,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5766),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5330),
                             DrugId = 10,
                             ImagePath = "product-right-side.png",
                             IsDelete = false,
@@ -2175,7 +2799,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 49,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5767),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5331),
                             DrugId = 10,
                             ImagePath = "product-box.png",
                             IsDelete = false,
@@ -2185,7 +2809,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 50,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5767),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5332),
                             DrugId = 10,
                             ImagePath = "product-pill.png",
                             IsDelete = false,
@@ -2195,7 +2819,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 51,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5768),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5333),
                             DrugId = 11,
                             ImagePath = "product-11.png",
                             IsDelete = false,
@@ -2205,7 +2829,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 52,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5769),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5334),
                             DrugId = 11,
                             ImagePath = "product-left-side.png",
                             IsDelete = false,
@@ -2215,7 +2839,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 53,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5770),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5335),
                             DrugId = 11,
                             ImagePath = "product-right-side.png",
                             IsDelete = false,
@@ -2225,7 +2849,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 54,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5771),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5335),
                             DrugId = 11,
                             ImagePath = "product-box.png",
                             IsDelete = false,
@@ -2235,7 +2859,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 55,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5772),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5338),
                             DrugId = 11,
                             ImagePath = "product-pill.png",
                             IsDelete = false,
@@ -2245,7 +2869,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 56,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5775),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5339),
                             DrugId = 12,
                             ImagePath = "product-12.png",
                             IsDelete = false,
@@ -2255,7 +2879,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 57,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5776),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5339),
                             DrugId = 12,
                             ImagePath = "product-left-side.png",
                             IsDelete = false,
@@ -2265,7 +2889,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 58,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5778),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5340),
                             DrugId = 12,
                             ImagePath = "product-right-side.png",
                             IsDelete = false,
@@ -2275,7 +2899,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 59,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5779),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5341),
                             DrugId = 12,
                             ImagePath = "product-box.png",
                             IsDelete = false,
@@ -2285,7 +2909,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 60,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5779),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5342),
                             DrugId = 12,
                             ImagePath = "product-pill.png",
                             IsDelete = false,
@@ -2295,7 +2919,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 61,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5780),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5343),
                             DrugId = 13,
                             ImagePath = "product-13.png",
                             IsDelete = false,
@@ -2305,7 +2929,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 62,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5781),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5343),
                             DrugId = 13,
                             ImagePath = "product-left-side.png",
                             IsDelete = false,
@@ -2315,7 +2939,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 63,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5782),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5344),
                             DrugId = 13,
                             ImagePath = "product-right-side.png",
                             IsDelete = false,
@@ -2325,7 +2949,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 64,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5782),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5345),
                             DrugId = 13,
                             ImagePath = "product-box.png",
                             IsDelete = false,
@@ -2335,7 +2959,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 65,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5783),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5346),
                             DrugId = 13,
                             ImagePath = "product-pill.png",
                             IsDelete = false,
@@ -2345,7 +2969,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 66,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5784),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5347),
                             DrugId = 14,
                             ImagePath = "product-14.png",
                             IsDelete = false,
@@ -2355,7 +2979,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 67,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5785),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5347),
                             DrugId = 14,
                             ImagePath = "product-left-side.png",
                             IsDelete = false,
@@ -2365,7 +2989,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 68,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5786),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5348),
                             DrugId = 14,
                             ImagePath = "product-right-side.png",
                             IsDelete = false,
@@ -2375,7 +2999,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 69,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5786),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5349),
                             DrugId = 14,
                             ImagePath = "product-box.png",
                             IsDelete = false,
@@ -2385,7 +3009,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 70,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5787),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5350),
                             DrugId = 14,
                             ImagePath = "product-pill.png",
                             IsDelete = false,
@@ -2395,7 +3019,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 71,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5789),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5352),
                             DrugId = 15,
                             ImagePath = "product-15.png",
                             IsDelete = false,
@@ -2405,7 +3029,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 72,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5790),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5353),
                             DrugId = 15,
                             ImagePath = "product-left-side.png",
                             IsDelete = false,
@@ -2415,7 +3039,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 73,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5791),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5354),
                             DrugId = 15,
                             ImagePath = "product-right-side.png",
                             IsDelete = false,
@@ -2425,7 +3049,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 74,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5792),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5354),
                             DrugId = 15,
                             ImagePath = "product-box.png",
                             IsDelete = false,
@@ -2435,7 +3059,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 75,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5793),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5355),
                             DrugId = 15,
                             ImagePath = "product-pill.png",
                             IsDelete = false,
@@ -2480,7 +3104,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 1,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5829),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5390),
                             Description = "The item will be shipped from Azerbaijan. So it need 35-50 days to deliver. Our product is good with reasonable price and we believe you will worth it. So please wait for it patiently! Thanks.Any question please kindly to contact us and we promise to work hard to help you to solve the problem",
                             IsDelete = false,
                             Title = "Shipping"
@@ -2488,7 +3112,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 2,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5830),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5391),
                             Description = "If you don't need the drug, you can contact us then we will help you to solve the problem, so please close the return request! Thanks.",
                             IsDelete = false,
                             Title = "About return request"
@@ -2496,7 +3120,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 3,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5830),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5392),
                             Description = "If it is the quality question, we will resend or refund to you; If you receive damaged or wrong drug, please contact us and attach some pictures about product, we will exchange a new correct drug to you after the confirmation.",
                             IsDelete = false,
                             Title = "Guarantee"
@@ -2539,7 +3163,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 1,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(6160),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5534),
                             IsDelete = false,
                             Key = "Logo",
                             Vaule = "logo-lumina.png"
@@ -2547,7 +3171,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 2,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(6162),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5535),
                             IsDelete = false,
                             Key = "Tel",
                             Vaule = "+994709070717"
@@ -2555,7 +3179,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 3,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(6175),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5538),
                             IsDelete = false,
                             Key = "Email",
                             Vaule = "luminahealth@gmail.com"
@@ -2563,7 +3187,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 4,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(6176),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5538),
                             IsDelete = false,
                             Key = "Name",
                             Vaule = "Lumina"
@@ -2571,7 +3195,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 5,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(6177),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5539),
                             IsDelete = false,
                             Key = "Adress",
                             Vaule = "A street somewhere, City"
@@ -2579,7 +3203,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 6,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(6178),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5547),
                             IsDelete = false,
                             Key = "WorkingHours",
                             Vaule = "Monday to Friday - 9am to 6pm"
@@ -2587,7 +3211,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 7,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(6179),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5548),
                             IsDelete = false,
                             Key = "Facebook",
                             Vaule = "https://www.facebook.com/"
@@ -2595,7 +3219,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 8,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(6179),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5548),
                             IsDelete = false,
                             Key = "Twitter",
                             Vaule = "https://twitter.com/"
@@ -2603,7 +3227,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 9,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(6180),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5549),
                             IsDelete = false,
                             Key = "Instagram",
                             Vaule = "https://www.instagram.com/"
@@ -2611,7 +3235,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 10,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(6181),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5550),
                             IsDelete = false,
                             Key = "Linkedin",
                             Vaule = "https://www.linkedin.com/"
@@ -2619,7 +3243,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 11,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(6182),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5550),
                             IsDelete = false,
                             Key = "DrawerLogo",
                             Vaule = "drawer-logo.png"
@@ -2666,7 +3290,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 1,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(6218),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5577),
                             IsDelete = false,
                             LongDescription = "Get health tips from our experts, news about ground-breaking research, feel-good moments and ways to get involved with us delivered right to your inbox. Don't miss out on valuable insights – sign up now and have a dose of inspiration delivered right to your inbox!",
                             ShortDescription = "Get health tips from our experts, news about ground-breaking research, feel-good moments and ways to get involved with us delivered right to your inbox.",
@@ -2748,7 +3372,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 1,
                             Content = "Eleanor Foster expresses gratitude for the compassionate care and cutting-edge facilities at this healthcare leader, where a commitment to excellence defines every aspect of medical services.",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5303),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4879),
                             ImagePath = "patient-testimonial-1.jpg",
                             IsDelete = false,
                             Name = "Eleanor Foster",
@@ -2758,7 +3382,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 2,
                             Content = "David Miller highly recommends this hospital for its top-notch medical services, emphasizing the institution's reputation for compassion and excellence in healthcare delivery.",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5304),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4880),
                             ImagePath = "patient-testimonial-2.jpg",
                             IsDelete = false,
                             Name = "David Miller",
@@ -2768,7 +3392,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 3,
                             Content = "Sophie Bennett commends the hospital's exceptional care and expertise, highlighting a warm and welcoming patient environment that ensures a positive healthcare experience.",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5305),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4881),
                             ImagePath = "patient-testimonial-3.jpg",
                             IsDelete = false,
                             Name = "Sophie Bennett",
@@ -2778,7 +3402,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 4,
                             Content = "Jackson Chen shares appreciation for the efficient and friendly staff who provided unparalleled support, contributing to a positive and reassuring hospital experience.",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5306),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4882),
                             ImagePath = "patient-testimonial-5.jpg",
                             IsDelete = false,
                             Name = "Jackson Chen",
@@ -2788,7 +3412,7 @@ namespace Lumina_Hospital.Migrations
                         {
                             Id = 5,
                             Content = "Olivia Ramirez praises the skillful professionals and welcoming atmosphere that define this patient-centered hospital, offering a healthcare setting that prioritizes individual needs and comfort.",
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5307),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4883),
                             ImagePath = "patient-testimonial-4.jpg",
                             IsDelete = false,
                             Name = "Olivia Ramirez",
@@ -2925,7 +3549,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 1,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(4651),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4582),
                             IsDelete = false,
                             VideoPath = "med.mp4"
                         });
@@ -2968,7 +3592,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 1,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5063),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4751),
                             IsDelete = false,
                             Title = "Your Trusted Destination",
                             VideoId = 1
@@ -2976,7 +3600,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 2,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5064),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4753),
                             IsDelete = false,
                             Title = "Here for You and Your Health",
                             VideoId = 1
@@ -2984,7 +3608,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 3,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5065),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4753),
                             IsDelete = false,
                             Title = "Good Living, Good Health",
                             VideoId = 1
@@ -2992,7 +3616,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 4,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5068),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4754),
                             IsDelete = false,
                             Title = "We Care, Your Smile Matters",
                             VideoId = 1
@@ -3042,7 +3666,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 1,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5380),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4932),
                             ImagePath = "volunteer-1.jpg",
                             IsDelete = false,
                             Name = "JASMINE THOMPSON",
@@ -3052,7 +3676,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 2,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5381),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4933),
                             ImagePath = "volunteer-2.jpg",
                             IsDelete = false,
                             Name = "GRACE MARTINEZ",
@@ -3062,7 +3686,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 3,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5382),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4934),
                             ImagePath = "volunteer-3.jpg",
                             IsDelete = false,
                             Name = "HENRY EVANS",
@@ -3072,7 +3696,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 4,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5385),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4934),
                             ImagePath = "volunteer-4.jpg",
                             IsDelete = false,
                             Name = "ISAAC TAYLOR",
@@ -3082,7 +3706,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 5,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5386),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4935),
                             ImagePath = "volunteer-5.jpg",
                             IsDelete = false,
                             Name = "HANNAH REED",
@@ -3092,7 +3716,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 6,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5386),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(4936),
                             ImagePath = "volunteer-6.jpg",
                             IsDelete = false,
                             Name = "SEBASTIAN ROSS",
@@ -3185,21 +3809,21 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 1,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5411),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5003),
                             IsDelete = false,
                             Title = "Diversity Is At Our Core"
                         },
                         new
                         {
                             Id = 2,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5412),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5004),
                             IsDelete = false,
                             Title = "Interview"
                         },
                         new
                         {
                             Id = 3,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5412),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5004),
                             IsDelete = false,
                             Title = "On-Boarding"
                         });
@@ -3242,7 +3866,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 1,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5441),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5023),
                             Detail = "Lumina Hospital is committed to creating and sustaining an inclusive workplace where employees and volunteers are valued and engaged, not in spite of, but because of, our differences – whether seen or unseen.",
                             IsDelete = false,
                             VolunteerOnboardingId = 1
@@ -3250,7 +3874,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 2,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5442),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5024),
                             Detail = "We believe that there is strength in diversity. Diversity enables the success of our mission; ensuring that we are a caring, open place to work and reflect the communities we serve.",
                             IsDelete = false,
                             VolunteerOnboardingId = 1
@@ -3258,7 +3882,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 3,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5443),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5024),
                             Detail = "Selected applicants will be notified of times for a phone interview. Phone interviews are generally about 20 minutes to confirm the information on your application and find out a little more about you and your interest in volunteering.",
                             IsDelete = false,
                             VolunteerOnboardingId = 2
@@ -3266,7 +3890,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 4,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5443),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5025),
                             Detail = "Applicants may then be brought in for an in-person interview with a Volunteer Services team member to determine placement in a volunteer role.",
                             IsDelete = false,
                             VolunteerOnboardingId = 2
@@ -3274,7 +3898,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 5,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5445),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5026),
                             Detail = "Prospective volunteers will be invited to a volunteer orientation once a volunteer placement has been confirmed.",
                             IsDelete = false,
                             VolunteerOnboardingId = 3
@@ -3282,7 +3906,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 6,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5446),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5027),
                             Detail = "Prior to orientation, prospective volunteers will need to have an in-person appointment with Luminas’s Occupational Health to review required immunizations and vaccinations. All volunteers must be fully vaccinated against COVID.",
                             IsDelete = false,
                             VolunteerOnboardingId = 3
@@ -3290,7 +3914,7 @@ namespace Lumina_Hospital.Migrations
                         new
                         {
                             Id = 7,
-                            CreateAt = new DateTime(2024, 1, 6, 20, 30, 45, 6, DateTimeKind.Local).AddTicks(5446),
+                            CreateAt = new DateTime(2024, 1, 7, 15, 27, 40, 657, DateTimeKind.Local).AddTicks(5027),
                             Detail = "After volunteer orientation and Occupational Health clearance, volunteers are then able to obtain their ID badge and begin volunteering.",
                             IsDelete = false,
                             VolunteerOnboardingId = 3
@@ -3326,15 +3950,15 @@ namespace Lumina_Hospital.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "030545f2-8b6f-4dae-91fd-c98b52228f4e",
-                            ConcurrencyStamp = "96dc4db2-389e-4a79-a31e-8e30c0bf719b",
+                            Id = "a9ed3bad-2b39-4df3-9ff9-7091c215ce85",
+                            ConcurrencyStamp = "e886a546-03b7-44bf-835a-d8c5786491d7",
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         },
                         new
                         {
-                            Id = "3242c3ae-14b2-4644-b877-76a84a1816fa",
-                            ConcurrencyStamp = "3a757b6b-9329-4c55-8147-56e37894627b",
+                            Id = "b3b46f3f-d128-4b0e-813a-dea4a2e718e3",
+                            ConcurrencyStamp = "e0e5760f-ac9e-4acb-a9d5-8b63552f47b0",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -3454,7 +4078,13 @@ namespace Lumina_Hospital.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Lumina_Hospital.Entities.AppUser.User", "User")
+                        .WithMany("Appointments")
+                        .HasForeignKey("UserId");
+
                     b.Navigation("Doctor");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Lumina_Hospital.Entities.Appointments.Availability", b =>
@@ -3624,6 +4254,8 @@ namespace Lumina_Hospital.Migrations
 
             modelBuilder.Entity("Lumina_Hospital.Entities.AppUser.User", b =>
                 {
+                    b.Navigation("Appointments");
+
                     b.Navigation("Comments");
 
                     b.Navigation("OrderInfos");

@@ -27,8 +27,8 @@
 
     <div class="container">
         <div class="video-items">
-            <a href="./donate.html"><span>Donate</span></a>
-            <a href="./doctor.html"><span class="video-request"><i class="fa fa-regular fa-calendar"></i>Request an appoinment</span></a>
+            <a asp-controller="donate" asp-action="donaterequest"><span>Donate</span></a>
+            <a asp-controller="appointment" asp-action="assignment"><span class="video-request"><i class="fa fa-regular fa-calendar"></i>Request an appoinment</span></a>
         </div>
     </div>
 </section>
@@ -51,9 +51,9 @@
 
                 <p>@Model.AboutSection.Description</p>
 
-                <a class="custom-btn custom-border-btn btn custom-link mt-3 me-3">Learn More</a>
+                <a asp-controller="about" asp-action="index" class="custom-btn custom-border-btn btn custom-link mt-3 me-3">Learn More</a>
 
-                <a class="custom-btn btn custom-link mt-3">Contact us</a>
+                <a asp-controller="contact" asp-action="contactrequest" class="custom-btn btn custom-link mt-3">Contact us</a>
             </div>
 
             <div class="col-lg-6 col-12 mt-5 mt-lg-0">

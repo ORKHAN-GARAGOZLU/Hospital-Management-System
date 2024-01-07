@@ -8,6 +8,7 @@
         public string ImagePath { get; set; }
         public int CategoryId { get; set; }
         public int BasketCount { get; set; }
+        public int InStock { get; set; }
 
     }
 }

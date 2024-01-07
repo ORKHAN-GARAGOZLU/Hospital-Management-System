@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BmDDZ8nsmqJws7bmho00boQojG7CNvTHX76U7krbPDk=",
+  "Hash": "mS7Cj7CETpTIfyU0UDvshmpsLazMFUSYW2oPNeg2SiI=",
   "Source": "Lumina-Hospital",
   "BasePath": "_content/Lumina-Hospital",
   "Mode": "Default",
@@ -33892,6 +33892,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\banner\\our-product-banner.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\user\\Desktop\\Final-Project\\Hospital_Management_System\\Lumina-Hospital\\wwwroot\\assets\\images\\blog\\28f91226-c943-4df5-b40c-068865697850medical-team.png",
+      "SourceId": "Lumina-Hospital",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\Final-Project\\Hospital_Management_System\\Lumina-Hospital\\wwwroot\\",
+      "BasePath": "_content/Lumina-Hospital",
+      "RelativePath": "assets/images/blog/28f91226-c943-4df5-b40c-068865697850medical-team.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\blog\\28f91226-c943-4df5-b40c-068865697850medical-team.png"
     },
     {
       "Identity": "C:\\Users\\user\\Desktop\\Final-Project\\Hospital_Management_System\\Lumina-Hospital\\wwwroot\\assets\\images\\blog\\3574df04-e185-4cde-b546-22c5f5716616medical-team.png",

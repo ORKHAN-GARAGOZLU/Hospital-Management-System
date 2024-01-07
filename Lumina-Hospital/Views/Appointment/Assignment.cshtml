@@ -1,56 +1,94 @@
-﻿@using Lumina_Hospital.Entities.Appointments
-@model Appointment
-<!-- Doctor appointment banner start -->
+﻿<!-- Doctor appointment banner start -->
 
+<section class="department-banner">
+    <div class="container">
+        <div class="department-banner-items">
 
-<!-- Doctor appointment banner end -->
-<div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="eventModalLabel">Event Title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+            <h1 class="department-name">Make appointment</h1>
+
+            <button class="department-request custom-btn-bg-white">
+                <a asp-controller="contact" asp-action="contactrequest">Contact us <i class="bi bi-arrow-right"></i></a>
+            </button>
+
+            <div class="d-flex column-gap-2">
+                <button class="department-request custon-btn-bg-teal mt-2">
+                    <a asp-controller="donate" asp-action="donaterequest">Donate</a>
+                </button>
+                <button class="department-request custon-btn-bg-teal mt-2">
+                    <a asp-controller="volunteer" asp-action="Index">Volunteer</a>
                 </button>
             </div>
-            <div class="modal-body">
-                <form id="eventForm">
-                    <div class="form-group">
-                        <label for="eventTitle">Title:</label>
-                        <input type="text" class="form-control" id="eventTitle" required>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="selectDoctor">Select Doctor:</label>
-                        <select class="form-control" id="selectDoctor" required>
-                            <option value="">Select a doctor</option>
-                            @foreach (var doctor in ViewBag.Doctors)
-                            {
-                                <option value="@doctor.Id">@doctor.Name</option>
-                            }
-                        </select>
-                    </div>
+            <div class="">
+            </div>
 
-                    <div class="form-group">
-                        <label for="selectTimeSlot">Select Time Slot:</label>
-                        <select class="form-control" id="selectTimeSlot" required>
-                            <option value="">Select a time slot</option>
-                        </select>
-                    </div>
+        </div>
+    </div>
 
-                    <button type="submit" class="btn btn-primary">Save</button>
-                </form>
+</section>
 
+<!-- Doctor appointment banner end -->
+
+@if(!User.Identity.IsAuthenticated)
+{
+    <div class="container distance">
+        <h1>If you want to make appointment</h1>
+        <h1><a asp-controller="account" asp-action="login" style="color: teal">Plese login</a></h1>
+        
+    </div>
+}
+else
+{
+    <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eventModalLabel">Appointment</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="eventForm">
+                        <div class="form-group">
+                            <label for="eventTitle">Phone</label>
+                            <input type="text" class="form-control" id="eventTitle" required>
+                        </div>
+
+                        <div class="form-group mt-2">
+                            <label for="selectDoctor">Select Doctor:</label>
+                            <select class="form-control" id="selectDoctor" required>
+                                <option value="">Select a doctor</option>
+                                @foreach (var doctor in ViewBag.Doctors)
+                                {
+                                    <option value="@doctor.Id">@doctor.Name</option>
+                                }
+                            </select>
+                        </div>
+
+                        <div class="form-group mt-2">
+                            <label for="selectTimeSlot">Select Time</label>
+                            <select class="form-control" id="selectTimeSlot" required>
+                                <option value="">Select time</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary mt-3">Save</button>
+                    </form>
+
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="container distance">
+    <div class="container distance">
 
-    <div id="calendar"></div>
-    
-</div>
+        <div id="calendar"></div>
+
+    </div>
+}
+
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -70,7 +108,7 @@
             select: function (arg) {
                 $('#eventModal').modal('show');
 
-                $('#selectDoctor').change(function () {
+                $('#selectDoctor').off('change').on('change', function () {
                     var doctorId = $(this).val();
                     loadAvailableTimes(doctorId);
                 });
@@ -78,22 +116,22 @@
                 $('#eventForm').on('submit', function (e) {
                     e.preventDefault();
 
-                    var title = $('#eventTitle').val();
-                    if (title) {
+                    var phone = $('#eventTitle').val();
+                    if (phone) {
                         $.ajax({
                             type: "POST",
                             url: "/Appointment/Assignment",
                             data: {
-                                title: title,
+                                phone: phone,
                                 start: arg.start.toISOString(),
-                                end: arg.end.toISOString(),
+                                end: arg.end ? arg.end.toISOString() : null,
                                 doctorId: $('#selectDoctor').val(),
                                 time: $('#selectTimeSlot').val(),
                             },
                             success: function (response) {
                                 if (response.success) {
                                     calendar.addEvent({
-                                        title: title,
+                                        phone: phone,
                                         start: arg.start,
                                         end: arg.end,
                                         allDay: arg.allDay
@@ -121,18 +159,12 @@
             },
             editable: true,
             dayMaxEvents: true,
-            events: [
-                // {
-                //     title: 'All Day Event',
-                //     start: '2020-09-01'
-                // },
-                // {
-                //     title: 'Long Event',
-                //     start: '2020-09-07',
-                //     end: '2020-09-10'
-                // },
-                
-            ]
+            validRange: {
+                start: new Date(),
+            },
+            
+            hiddenDays: [0, 6], 
+            events: []
         });
 
         calendar.render();
@@ -140,7 +172,7 @@
 
     function loadAvailableTimes(doctorId) {
         const selectTimeSlot = $('#selectTimeSlot');
-        selectTimeSlot.empty(); 
+        selectTimeSlot.empty();
 
         if (doctorId) {
             $.ajax({
@@ -153,11 +185,11 @@
                             selectTimeSlot.append(`<option value="${availability}">${availability}</option>`);
                         });
                     } else {
-                        alert("doctors have not available time.");
+                        alert("available time is not.");
                     }
                 },
                 error: function () {
-                    alert("Error. not loading .");
+                    alert("error: available times not loading.");
                 }
             });
         }

@@ -15,6 +15,12 @@
         
     </div>
 }
+else if (Model.BasketItems == null || !Model.BasketItems.Any())
+{
+    <div class="container distance">
+        <h1>Your basket is empty. Please add items to your basket before placing an order.</h1>
+    </div>
+}
 else
 {
     <section class="distance">
@@ -54,11 +60,11 @@ else
                                         <div class="country-select clearfix">
                                             <label>Country <span class="required">*</span></label>
                                             <select asp-for="Country" class="myniceselect nice-select wide">
-                                                <option value="tr">Turkey</option>
-                                                <option value="oz">Ozbekistan</option>
-                                                <option value="ge">Georgia</option>
-                                                <option value="ru">Russia</option>
-                                                <option value="ir">Iran</option>
+                                                <option value="Turkey">Turkey</option>
+                                                <option value="Ozbekistan">Ozbekistan</option>
+                                                <option value="Georgia">Georgia</option>
+                                                <option value="Russia">Russia</option>
+                                                <option value="Iran">Iran</option>
                                             </select>
                                         </div>
                                     </div>

@@ -30,6 +30,7 @@ namespace Lumina_Hospital
                 opt.IdleTimeout = TimeSpan.FromMinutes(5);
             });
             services.AddScoped<IBasket, BasketService>();
+            services.AddScoped<ISendEmail, SendEmailService>();
             services.AddHttpContextAccessor();
 
             services.AddIdentity<User, IdentityRole>(opt =>

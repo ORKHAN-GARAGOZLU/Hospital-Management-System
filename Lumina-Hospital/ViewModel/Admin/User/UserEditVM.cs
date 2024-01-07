@@ -1,4 +1,5 @@
-﻿using Lumina_Hospital.Entities.UserOrder;
+﻿using Lumina_Hospital.Entities.Appointments;
+using Lumina_Hospital.Entities.UserOrder;
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 
@@ -21,5 +22,6 @@ namespace Lumina_Hospital.ViewModel.Admin.User
         [DataType(DataType.Password)]
         public string? NewPassword { get; set; }
         public OrderInfo OrderInfo { get; set; }
+        public Appointment Appointment { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 using Lumina_Hospital.DAL;
 using Lumina_Hospital.Entities.Blog;
 using Lumina_Hospital.Extension;
+using Lumina_Hospital.Services.Abstract;
 using Lumina_Hospital.ViewModel.Admin.Blog;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -17,12 +18,15 @@ namespace Lumina_Hospital.Areas.LuminaHospitalArea.Controllers
         private readonly LuminaHospitalDbContex _contex;
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly IMapper _mapper;
+        private readonly ISendEmail _emailService;
 
-        public BlogController(LuminaHospitalDbContex contex, IWebHostEnvironment webHostEnvironment, IMapper mapper)
+
+        public BlogController(LuminaHospitalDbContex contex, IWebHostEnvironment webHostEnvironment, IMapper mapper, ISendEmail sendEmail)
         {
             _webHostEnvironment = webHostEnvironment;
             _contex = contex;
             _mapper = mapper;
+            _emailService = sendEmail;
         }
         public IActionResult Index()
         {
@@ -71,41 +75,11 @@ namespace Lumina_Hospital.Areas.LuminaHospitalArea.Controllers
                 {
                     var subject = "New Blog";
 
-                    SendEmail(user.Email, subject, createdBlogUrl);
+                    _emailService.SendEmail(user.Email, subject, createdBlogUrl, "wwwroot/templates/blog/index.html");
                 }
             }
 
             return RedirectToAction("Index");
-
-        }
-
-
-
-        public void SendEmail(string email, string subject, string blogUrl)
-        {
-
-            MailMessage mailMessage = new();
-            mailMessage.From = new MailAddress("orkhanqaragozov@gmail.com", "Lumina Hospital");
-            mailMessage.To.Add(new MailAddress(email));
-            mailMessage.Subject = subject;
-
-            string body = string.Empty;
-            using (StreamReader streamReader = new StreamReader("wwwroot/templates/blog/index.html"))
-            {
-                body = streamReader.ReadToEnd();
-            }
-
-            mailMessage.Body = body.Replace("{{link}}", blogUrl);
-            mailMessage.IsBodyHtml = true;
-
-
-
-            SmtpClient smtpClient = new();
-            smtpClient.Port = 587;
-            smtpClient.Host = "smtp.gmail.com";
-            smtpClient.EnableSsl = true;
-            smtpClient.Credentials = new NetworkCredential("orkhanqaragozov@gmail.com", "wrhi dcnt iiwo belq");
-            smtpClient.Send(mailMessage);
 
         }
 

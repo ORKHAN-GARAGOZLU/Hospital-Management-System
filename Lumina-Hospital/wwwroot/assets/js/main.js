@@ -1,3 +1,9 @@
+$(document).ready(function () {
+    $("#loadMorea").on("click", function () {
+        alert("Salam");
+    });
+});
+
 //Tab
 
 $('.cart-plus-minus').append(

@@ -18,7 +18,9 @@ namespace Lumina_Hospital.ViewComponents
         {
             HomeVM vm = new HomeVM
             {
-                Settings = _contex.Settings.ToDictionary(s => s.Key, s => s.Vaule)
+                Settings = _contex.Settings.ToDictionary(s => s.Key, s => s.Vaule),
+                Departments = _contex.Departments.Where(d => !d.IsDelete).Include(d => d.Doctors).ToList(),
+
             };
 
             return View(await Task.FromResult(vm));

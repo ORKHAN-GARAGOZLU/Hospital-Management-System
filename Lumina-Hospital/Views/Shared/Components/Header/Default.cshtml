@@ -123,6 +123,9 @@
             <div class="accordion-section">
                 <button class="accordion-title"><a asp-controller="contact" asp-action="contactrequest">Contact Us</a></button>
             </div>
+            <div class="accordion-section">
+                <button class="accordion-title"><a asp-controller="appointment" asp-action="assignment">Make an appointment</a></button>
+            </div>
         </div>
     </div>
 
@@ -160,7 +163,7 @@
         <div class="d-flex flex-column gap-1 text-center">
             <a class="btn-cross" asp-controller="basket" asp-action="showbasket">View Cart</a>
 
-            <a class="btn-cross" href="./checkout.html">Checkout</a>
+            <a class="btn-cross" asp-controller="order" asp-action="order">Checkout</a>
 
             <a class="btn-cross" asp-controller="wishlist" asp-action="showwishlist">Wishlist</a>
         </div>

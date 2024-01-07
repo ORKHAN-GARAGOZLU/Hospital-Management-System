@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Lumina-Hospital")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d84ca5abd54a6dca7767ccee8843b31ecd5eba1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+efe05974c45c2570aa01b3ef9fecce85dec41d49")]
 [assembly: System.Reflection.AssemblyProductAttribute("Lumina-Hospital")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Lumina-Hospital")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

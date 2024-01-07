@@ -1040,12 +1040,12 @@ button {
   left: 250px;
   cursor: pointer;
 }
-@media only screen and (min-width: 430px) {
+/*@media only screen and (min-width: 430px) {
     .login-bg .login-items .input-items .show-password {
         left: 310px;
         cursor: pointer;
     }
-}
+}*/
 
 /*@media only screen and (min-width: 391px) {
     .login-bg .login-items .input-items .show-password {

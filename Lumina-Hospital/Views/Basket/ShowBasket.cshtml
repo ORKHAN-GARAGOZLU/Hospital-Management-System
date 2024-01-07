@@ -74,12 +74,14 @@
                                                         <button><a asp-controller="basket" asp-action="increase" asp-route-id="@item.Id">+</a></button>
                                                     </div>
                                                 </td>
+                                                @Html.ValidationMessage("Increase")
                                                 <td class="product-subtotal">
                                                     <span class="amount">@Math.Round(item.BasketCount * item.Price, 2)</span>
                                                 </td>
 
                                             </tr>
                                         }
+                                        
 
                                     </tbody>
                                 </table>

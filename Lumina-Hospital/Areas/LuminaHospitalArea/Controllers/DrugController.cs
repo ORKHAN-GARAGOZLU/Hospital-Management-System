@@ -1,14 +1,12 @@
 ﻿using Lumina_Hospital.DAL;
 using Lumina_Hospital.Entities.Product;
 using Lumina_Hospital.Extension;
+using Lumina_Hospital.Services.Abstract;
 using Lumina_Hospital.ViewModel.Admin.Product;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using System.Net.Mail;
-using System.Net;
-using Lumina_Hospital.Entities.Blog;
 
 namespace Lumina_Hospital.Areas.LuminaHospitalArea.Controllers
 {
@@ -18,12 +16,15 @@ namespace Lumina_Hospital.Areas.LuminaHospitalArea.Controllers
     {
         private readonly LuminaHospitalDbContex _contex;
         private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly ISendEmail _sendEmail;
 
-        public DrugController(LuminaHospitalDbContex contex, IWebHostEnvironment webHostEnvironment)
+        public DrugController(LuminaHospitalDbContex contex, IWebHostEnvironment webHostEnvironment, ISendEmail sendEmail)
         {
             _webHostEnvironment = webHostEnvironment;
             _contex = contex;
+            _sendEmail = sendEmail;
         }
+
 
         public IActionResult Index()
         {
@@ -108,7 +109,7 @@ namespace Lumina_Hospital.Areas.LuminaHospitalArea.Controllers
                 drug.DrugImages.Add(drugImage);
             }
 
-
+            drug.CreateAt = DateTime.Now;
             _contex.Drugs.Add(drug);
             _contex.SaveChanges();
 
@@ -123,41 +124,12 @@ namespace Lumina_Hospital.Areas.LuminaHospitalArea.Controllers
                 {
                     var subject = "New product";
 
-                    SendEmail(user.Email, subject, productUrl);
+                    _sendEmail.SendEmail(user.Email, subject, productUrl, "wwwroot/templates/product/index.html");
                 }
             }
 
             return RedirectToAction("Index");
         }
-
-        public void SendEmail(string email, string subject, string productUrl)
-        {
-
-            MailMessage mailMessage = new();
-            mailMessage.From = new MailAddress("orkhanqaragozov@gmail.com", "Lumina Hospital");
-            mailMessage.To.Add(new MailAddress(email));
-            mailMessage.Subject = subject;
-
-            string body = string.Empty;
-            using (StreamReader streamReader = new StreamReader("wwwroot/templates/product/index.html"))
-            {
-                body = streamReader.ReadToEnd();
-            }
-
-            mailMessage.Body = body.Replace("{{link}}", productUrl);
-            mailMessage.IsBodyHtml = true;
-
-
-
-            SmtpClient smtpClient = new();
-            smtpClient.Port = 587;
-            smtpClient.Host = "smtp.gmail.com";
-            smtpClient.EnableSsl = true;
-            smtpClient.Credentials = new NetworkCredential("orkhanqaragozov@gmail.com", "wrhi dcnt iiwo belq");
-            smtpClient.Send(mailMessage);
-
-        }
-
         public IActionResult Edit(int? id)
         {
             ViewBag.Categories = new SelectList(_contex.Categories.ToList(), "Id", "Name");
@@ -242,12 +214,12 @@ namespace Lumina_Hospital.Areas.LuminaHospitalArea.Controllers
             {
                 if (!photo.CheckImage())
                 {
-                    ModelState.AddModelError("Photos", "Sadece fotoğraf ekleyin.");
+                    ModelState.AddModelError("Photos", "Only Photo.");
                     return View();
                 }
                 if (photo.CheckImageSize(1000))
                 {
-                    ModelState.AddModelError("Photos", "Boyut çok yüksek.");
+                    ModelState.AddModelError("Photos", "Size is high.");
                     return View();
                 }
 
@@ -255,6 +227,7 @@ namespace Lumina_Hospital.Areas.LuminaHospitalArea.Controllers
                 drugImage.ImagePath = photo.SaveImage("./assets/images/products/", _webHostEnvironment);
                 drug.DrugImages.Add(drugImage);
             }
+
 
             _contex.SaveChanges();
             return RedirectToAction("Index");

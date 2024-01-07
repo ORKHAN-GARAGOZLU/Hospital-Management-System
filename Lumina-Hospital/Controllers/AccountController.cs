@@ -110,7 +110,8 @@ namespace Lumina_Hospital.Controllers
                 vm.FullName = user.FullName;
                 vm.Email = user.Email;
                 vm.UserName = user.UserName;
-                vm.OrderInfo = _context.OrderInfos.Where(o => !o.IsDelete).Include(o => o.OrderDetails).FirstOrDefault();
+                vm.OrderInfo = _context.OrderInfos.Where(o => o.User.Id == user.Id && !o.IsDelete).Include(o => o.OrderDetails).FirstOrDefault();
+                vm.Appointment = _context.Appointments.Where(o => o.User.Id == user.Id && !o.IsDelete).Include(o => o.Doctor).FirstOrDefault();
 
             }
             return View(vm);

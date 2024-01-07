@@ -13,24 +13,27 @@ namespace Lumina_Hospital.Controllers
         {
             _context = context;
         }
+
         public ActionResult Assignment()
         {
             ViewBag.Doctors = _context.Doctors.Include(d => d.Availabilities).ToList();
-            
+
             return View();
         }
 
         [HttpPost]
-        public JsonResult Assignment(string title, DateTime start, DateTime? end, int doctorId, string time)
+        public JsonResult Assignment(string phone, DateTime start, DateTime? end, int doctorId, string time)
         {
             try
             {
+                var currentUser = _context.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
                 var newAppointment = new Appointment
                 {
-                    Name = title,
+                    Phone = phone,
                     Day = start,
                     DoctorId = doctorId,
                     AvailableTime = time,
+                    User = currentUser,
                 };
 
                 _context.Appointments.Add(newAppointment);
@@ -67,11 +70,7 @@ namespace Lumina_Hospital.Controllers
             }
         }
 
-        public IActionResult ShowAll()
-        {
-            var appointments = _context.Appointments.ToList();
-            return new JsonResult(appointments);
-        }
+      
 
 
     }

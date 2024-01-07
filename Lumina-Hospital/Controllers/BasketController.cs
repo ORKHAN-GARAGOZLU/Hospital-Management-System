@@ -120,15 +120,17 @@ namespace Lumina_Hospital.Controllers
 
             if (increaseProduct != null)
             {
-                if (increaseProduct.BasketCount < 10)
+                if (increaseProduct.BasketCount < 10 && increaseProduct.BasketCount > increaseProduct.InStock)
                 {
-
                     increaseProduct.BasketCount++;
+                    
                     Response.Cookies.Append("basket", JsonConvert.SerializeObject(products),
                     new CookieOptions { MaxAge = TimeSpan.FromMinutes(15) });
+                    
                 }
                 else
                 {
+                    ModelState.AddModelError("Increase", "Insufficient stock to increase the quantity.");
                     return RedirectToAction("ShowBasket");
                 }
             }
